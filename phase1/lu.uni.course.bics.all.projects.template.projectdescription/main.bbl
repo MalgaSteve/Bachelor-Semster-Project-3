@@ -1,0 +1,78 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{sweetpake}{unpublished}{}
+      \name{author}{2}{}{%
+        {{hash=000932c5a9b2cd819f027de3f8ea76e7}{%
+           family={Arriage},
+           familyi={A\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=645948e6362d4b4a5003f8cdb70cb682}{%
+           family={Skrobot},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3762205d5bc339c188d4878b730ffc3a}
+      \strng{fullhash}{3762205d5bc339c188d4878b730ffc3a}
+      \strng{bibnamehash}{3762205d5bc339c188d4878b730ffc3a}
+      \strng{authorbibnamehash}{3762205d5bc339c188d4878b730ffc3a}
+      \strng{authornamehash}{3762205d5bc339c188d4878b730ffc3a}
+      \strng{authorfullhash}{3762205d5bc339c188d4878b730ffc3a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SweetPAKE: Key exchange with decoy passwords}
+      \field{year}{2023}
+    \endentry
+    \entry{juels2013honeywords}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=c865ec9228baea73d3d6c2c3faa7bcc7}{%
+           family={Juels},
+           familyi={J\bibinitperiod},
+           given={Ari},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{fullhash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{bibnamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authorbibnamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authornamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authorfullhash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2013 ACM SIGSAC conference on Computer \& communications security}
+      \field{title}{Honeywords: Making password-cracking detectable}
+      \field{year}{2013}
+      \field{pages}{145\bibrangedash 160}
+      \range{pages}{16}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
