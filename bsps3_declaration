@@ -1,0 +1,15 @@
+Scientific: 
+The scientific question answered in this project will be: How to detect if a
+password file is in possession of intruders and at the same time prevent
+phishing attacks? First of all this paper goes into technologies used to alarm
+the system administrator if an attacker has unauthorized access to the password
+file. Afterwards it covers into how this is combined with PAKE (Password Access
+Key Exchange) to prevent phising attacks.
+
+
+Technical: 
+The technical part will be a system that alarms the system administrator of
+potential attackers being in possession of the password file. It uses the
+technical properties picked up by the scientific part. The project will be
+written in python and it will implement PAKE that ensures further security for
+the password file to prevent for example phishing attacks.
