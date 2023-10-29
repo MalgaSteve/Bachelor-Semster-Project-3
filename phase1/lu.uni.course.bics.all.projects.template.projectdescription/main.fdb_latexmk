@@ -1,21 +1,21 @@
 # Fdb version 4
-["biber main"] 1698160414 "main.bcf" "main.bbl" "main" 1698160418 0
-  "./sample.bib" 1698160349 410 c44ef95716ee86c9d8dbcce52f11b179 ""
-  "main.bcf" 1698160417 107973 defdbb8fe1da11871e168d9ac828c9ea "lualatex"
+["biber main"] 1698486529 "main.bcf" "main.bbl" "main" 1698585016 0
+  "./sample.bib" 1698486474 824 fa0cb245015aa60e3613461f393cd6a0 ""
+  "main.bcf" 1698585016 108360 8e6d96fa77d4fc6f83cb44dea702dd2e "lualatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["lualatex"] 1698160416 "main.tex" "main.pdf" "main" 1698160418 0
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1698153926 127314 919d285d9767bfb7a48703566e783f7a ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1698153927 127657 41481d921577576d29fe9dbcd4d2575d ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman17-regular.luc" 1698153927 128908 0de37ce1ccaa8c9079fc3e893588b7e9 ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc" 1698153926 125954 fa02a4e3515f228852bafb4df6f859dc ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc" 1698153927 128503 1723f414a905edf6e96a60c37e906267 ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc" 1698153926 128362 8f0dce180e0cf2ff6c32d2a6434095d8 ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1698153926 128133 c3e0d7b1477bf5b5fcd26a47edd46ed2 ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman9-regular.luc" 1698153927 127947 a7193f840ee383ea6ae09282efb84ab1 ""
-  "/home/malga/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1698153926 256414 01ebecc974a1420cd89fbcc790d4d76e ""
+["lualatex"] 1698585012 "main.tex" "main.pdf" "main" 1698585016 0
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1698139245 127314 919d285d9767bfb7a48703566e783f7a ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1698139246 127657 41481d921577576d29fe9dbcd4d2575d ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman17-regular.luc" 1698139246 128908 0de37ce1ccaa8c9079fc3e893588b7e9 ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc" 1698139245 125954 fa02a4e3515f228852bafb4df6f859dc ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc" 1698139246 128503 1723f414a905edf6e96a60c37e906267 ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc" 1698139245 128362 8f0dce180e0cf2ff6c32d2a6434095d8 ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1698139245 128133 c3e0d7b1477bf5b5fcd26a47edd46ed2 ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman9-regular.luc" 1698139246 127947 a7193f840ee383ea6ae09282efb84ab1 ""
+  "/home/malga/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1686067412 275549 df0b8b63afe4390a9f0487b544ca0b81 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" 1689853683 111536 ae9d1b331000d544f47e5223081b7b54 ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf" 1689853683 110400 d844cffffa1af59f9d2bb1bfdb6f1a2c ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf" 1689853683 112212 f133bf18e62239f8946eb96eb60e2777 ""
@@ -125,12 +125,12 @@
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload-tounicode.lua" 1689853683 7528 9bc62ed441ed23b5222925b019479f78 ""
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload-unicode.lua" 1689853683 7917 30f5b1073daa0c6e85ca1db843fbd9cd ""
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload.lua" 1689853683 13565 83bac25a8cf8630acccd6a7f8bb9f791 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1698157958 4623317 a14e403ea671a9bc12f23e543c6a500e ""
-  "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1698157880 11875589 28a91e83af17be1c7fbecf6c41d8baab ""
-  "main.aux" 1698160417 1167 422a108920128ef54f1472f7ef4d2002 "lualatex"
-  "main.bbl" 1698160415 2870 771f89f087aa4ac4fdb7d20537f3c246 "biber main"
-  "main.run.xml" 1698160417 2336 e082efa416cce075756955b6a85316b8 "lualatex"
-  "main.tex" 1698160410 4660 e53d174bb92e18b11cdd5e3ce52a7e7a ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1698139085 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
+  "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1698139074 11875583 11d47339b960dbad169a86e0669425cb ""
+  "main.aux" 1698585016 3172 4d70c3bfe8956a722b378378050372ac "lualatex"
+  "main.bbl" 1698486531 4957 a1c03507cd5fbb2621d45d4d1e9c2d11 "biber main"
+  "main.run.xml" 1698585016 2336 e082efa416cce075756955b6a85316b8 "lualatex"
+  "main.tex" 1698585001 13373 7f72a303c53d97f1bb9dd8941667230c ""
   (generated)
   "main.aux"
   "main.bcf"

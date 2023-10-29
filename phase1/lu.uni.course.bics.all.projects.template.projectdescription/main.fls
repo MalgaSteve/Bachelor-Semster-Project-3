@@ -1,4 +1,4 @@
-PWD /home/malga/Documents/Bachelor-Semester-Project-3/phase1/lu.uni.course.bics.all.projects.template.projectdescription
+PWD /home/malga/Documents/semester3/bsp/phase1/lu.uni.course.bics.all.projects.template.projectdescription
 INPUT /var/lib/texmf/web2c/luahbtex/lualatex.fmt
 INPUT ./main.tex
 OUTPUT main.log
