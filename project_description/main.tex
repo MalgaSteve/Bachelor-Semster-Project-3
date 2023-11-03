@@ -110,7 +110,7 @@ attacks.
 \subsection{Honeywords and Decoy Passwords} The project will study password
 security, secure storage of passwords and brute forcing attacks. This will be
 done by exploring the concepts of "honeywords" as introduced in the Honeyword
-paper \cite{juels2013honeywords} by Rivers Juels. The paper introduces how you can add decoy
+paper \cite{juels2013honeywords} by Juels and Rivest. The paper introduces how you can add decoy
 passwords to the password file and suggests methods to generate these passwords
 such that even a skilled attacker can not guess the correct password from the
 decoy passwords. Then it introduces the concept of a honeychecker which stores
@@ -151,7 +151,7 @@ about in the first section by adding a PAKE protocol in the client-server
 authentication. It goes into detail about the SweetPAKE \cite{sweetpake}
 protocol and PAPKE\cite{papke}. This makes an attack a lot harder and it provides
 additional protection against phishing attacks to the already strong idea
-established by Riverst Juels. The section may also have a benchmark of the
+established by Juels and Rivest. The section may also have a benchmark of the
 implementation done in the technical part of this paper.
 
 \subsection{Conclusion} In a landscape defined by the reliance on username and
@@ -164,7 +164,7 @@ of digital interactions.
 
 \section{A Technical Deliverable 1 } The technical deliverable will be the
 implementation of a decoy password generator according to proposed protocols
-from the Honeyword paper \cite{juels2013honeywords} of Riverst Jules which is
+from the Honeyword paper \cite{juels2013honeywords} of Jules and Rivest which is
 discussed in the scientific part. Additionally, it integrates the SweetPAKE
 protocol \cite{sweetpake} suggested by Arriaga, Ryan and Skrobot.
 
@@ -185,12 +185,12 @@ ongoing battle against malicious attacks in our interconnected world.
 
 \subsection{Project structure} The deliverable will consist of two parts and
 try to combine both. The first part is the implementation of the ideas of
-Rivers Juels \cite{juels2013honeywords}. The second part is the implementation
+Juels and Rivest \cite{juels2013honeywords}. The second part is the implementation
 of the SweetPAKE introduced by Arriage, Ryan and Skrobot \cite{sweetpake}. 
 
 \subsubsection{Part 1: Honeywords Implementation} The aim of the project is to
 give a practical example of how the suggested password-generation methods of
-Riverst Juels can be implemented. In addition to that it will simulate the
+Juels and Rivest can be implemented. In addition to that it will simulate the
 actions of the Honeychecker (extern server).
 
 The functions the first part has to have:
@@ -225,11 +225,11 @@ agree on a session key this will be done following the SweetPAKE paper
 \cite{sweetpake}. This involves several steps and functions with the
 mathematical background behind it.
 
-After successfully implementing a PAKE. The SweetPAKE will be fully implemented
+After successfully implementing a PAKE, the SweetPAKE will be fully implemented
 by combining both previous parts. This implementation will then be a good
 example of an implementation of both Honeywords and SweetPAKE.
 
-\subsection{Bonus} If the students have time. A benchmark may be added to the
+\subsection{Bonus} In case the student has time, a benchmark may be added to the
 SweetPAKE protocol which tests the speeds of several different encryption
 algorithms and the difference between the speed of using the SweetPAKE protocol
 and using the current methods.
