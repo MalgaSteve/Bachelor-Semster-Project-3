@@ -97,9 +97,10 @@ class PAPKE_A:
         self._finished = False
 
     def gen(self, k):
-        g = self.params.group
-        self.sk = g.random_exponent(self.entropy_f)
-        self.apk = g.Base.exp(self.sk)
+        g1 = self.params.group
+        g2 = self.params.group
+        self.x = g1.random_exponent(self.entropy_f)
+        self.y1 = g.Base.exp(self.sk)
 
         return self.apk
 
