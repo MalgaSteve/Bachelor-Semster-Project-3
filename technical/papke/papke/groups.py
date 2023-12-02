@@ -26,7 +26,8 @@ third. It has the following additional properties:
 
 def password_to_exponent(pw, exponent_size_bytes, q):
     h = Hkdf(salt=b"", input_key_material=pw, hash=hashlib.sha256)
-    info = b"SPAKE2 password" expanded_password = h.expand(info, exponent_size_bytes + 16)
+    info = b"SPAKE2 password" 
+    expanded_password = h.expand(info, exponent_size_bytes + 16)
     i = bytes_to_number(expanded_password)
     pw_exponent = i % q
     return pw_exponent
@@ -145,7 +146,7 @@ class IntegerGroup:
         return element
 
     def password_to_hash(self, pw):
-        return arbitrary_element(pw)
+        return self.arbitrary_element(pw)
 
     def secrets_to_hash(self, R, y1, y2, k):
         return key_to_2exponents(R, y1, y2, k, self.exponent_size_bytes, self.q)

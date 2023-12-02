@@ -1,3 +1,3 @@
-from .spake2 import SPAKE2_A, SPAKE2_B, SPAKEError
+from .papke import PAPKE_Client, PAPKE_Server, SPAKEError
 
-SPAKE2_A, SPAKE2_B, SPAKEError  # hush pyflakes
+PAPKE_Client, PAPKE_Server, SPAKEError  # hush pyflakes

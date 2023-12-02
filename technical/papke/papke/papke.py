@@ -89,18 +89,18 @@ class PAPKE_Client:
         self._computed = False
         self._finished = False
 
-    def gen(self, k):
+    def gen(self):
         #gen function
         group = self.params.group
         self.random_exponent = group.random_exponent(self.entropy_f)
         self.y1_elem = group.Base1.exp(self.random_exponent)
         self.y2_elem = group.Base2.exp(self.random_exponent)
-        Y2_elem = self.y2_elem.elementmult.password_to_hash(self.pw)
+        Y2_elem = self.y2_elem.elementmult(group.password_to_hash(self.pw))
 
         #self.outbound_message = (self.y1+self.Y2) <-- apk
         y1_bytes = self.y1_elem.to_bytes()
         Y2_bytes = Y2_elem.to_bytes()
-        self.outbound_message =  y1_bytes + y2 _bytes
+        self.outbound_message =  y1_bytes + Y2_bytes
 
         outbound_id_and_message = self.side + self.outbound_message
 
@@ -108,23 +108,25 @@ class PAPKE_Client:
 
     def dec(self, inbound_message):
         #parse message
-        self.inbound_message = _extract_message(inbound_message)
+        group = self.params.group
+        self.inbound_message = self._extract_message(inbound_message)
         (c1, c2, c3) = self._parse_key(self.inbound_message)
+        c1 = group.bytes_to_element(c1)
+        c2 = group.bytes_to_element(c2)
 
         #computation
-        group = self.params.group
         R_elem = c2.elementmult(c1.exp(-self.random_exponent))
-        session_key_computed = group.xor(c3, R_elem)
-        (r1, r2) = secrets_to_hash(R_elem, self.y1_elem, self.y2_elem, session_key_computed)
-        if c1 != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)):
+        session_key_computed = group.xor(c3, R_elem.to_bytes())
+        (r1, r2) = group.secrets_to_hash(R_elem, self.y1_elem, self.y2_elem, session_key_computed)
+        if c1.to_bytes() != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)).to_bytes():
             raise IncorrectCode("Not the expected key")
 
         self.session_key = session_key_computed
         return self.session_key
 
     def _parse_key(self, c):
-        elem_size = self.group.element_size_bits
-        return [:elem_size], [elem_size:2*elem_size], [2*elem_size:]
+        elem_size = self.params.group.element_size_bytes
+        return c[:elem_size], c[elem_size:2*elem_size], c[2*elem_size:]
 
     def _extract_message(self, inbound_side_and_message):
         other_side = inbound_side_and_message[0:1]
@@ -140,10 +142,10 @@ class PAPKE_Client:
         return inbound_message
 
 
-class PAPKE_Client:
+class PAPKE_Server:
     "This class manages one side of a SPAKE2 key negotiation."
 
-    self.side = ServerId
+    side = ServerId
 
     def X_msg(self):
         return self.inbound_message
@@ -175,7 +177,7 @@ class PAPKE_Client:
     def enc(self, inbound_message):
         #parse inbound_messahe
         self.inbound_message = self._extract_message(inbound_message)
-        apk = parse_apk(self.inbound_message)
+        apk = self.parse_apk(self.inbound_message)
         group = self.params.group
         y1_elem = group.bytes_to_element(apk[0])
         Y2_elem = group.bytes_to_element(apk[1])
@@ -184,7 +186,7 @@ class PAPKE_Client:
         self.session_k = os.urandom(32)
 
         pw_to_hash = group.password_to_hash(self.pw)
-        y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1))
+        y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1)))
 
         random_exponent = group.random_exponent(self.entropy_f)
         R_elem = group.Base1.exp(random_exponent)
@@ -193,7 +195,7 @@ class PAPKE_Client:
 
         c1 = group.Base1.exp(r1).elementmult(group.Base2.exp(r2))
         c2 = y1_elem.exp(r1).elementmult(y2_elem.exp(r2)).elementmult(R_elem)
-        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()), self.session_k)
+        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()).digest(), self.session_k)
 
         #message
         #self.outbound_message = c = (c1, c2, c3)
@@ -203,8 +205,8 @@ class PAPKE_Client:
     
 
     def parse_apk(self, apk_bytes):
-        midPoint = len(apk_bytes) // 2
-        return apk_bytes[:midPoint], apk_bytes[midPoint:]
+        size_bytes = self.params.group.element_size_bytes
+        return apk_bytes[:size_bytes], apk_bytes[size_bytes:]
         
 
     def _extract_message(self, inbound_side_and_message):

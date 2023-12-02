@@ -30,6 +30,7 @@ def calculate_g2(p, q, seed):
     r = (p-1) // q
     h = bytes_to_number(processed_seed) % p
     element = pow(h, r, p)
+    print(pow(element, q, p))
     return hex(element)
 
 print("I1024: ")
