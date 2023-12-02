@@ -40,8 +40,8 @@ class IncorrectCode(SPAKEError):
     """Someone sent wring confirmation code."""
 
 
-SideA = b"A"
-SideB = b"B"
+ClientId = b"C"
+ServerId = b"S"
 
 DefaultParams = Params3072
 
@@ -57,16 +57,10 @@ DefaultParams = Params3072
 # key = H(H(pw) + H(idA) + H(idB) + X* + Y* + KB)
 
 
-class PAPKE_A:
+class PAPKE_Client:
     "This class manages one side of a SPAKE2 key negotiation."
 
-    side = SideA
-
-    def M(self):
-        return self.params.M
-
-    def N(self):
-        return self.params.N
+    side = ClientId
 
     def X_msg(self):
         return self.outbound_message
@@ -84,7 +78,6 @@ class PAPKE_A:
     ):
 
         self.pw = password
-        self.pw_exponent = params.group.password_to_exponent(password)
 
         self.idA = idA
         self.idB = idB
@@ -97,15 +90,22 @@ class PAPKE_A:
         self._finished = False
 
     def gen(self, k):
-        g1 = self.params.group
-        g2 = self.params.group
-        self.x = g1.random_exponent(self.entropy_f)
-        self.y1 = g.Base.exp(self.sk)
+        #gen function
+        group = self.params.group
+        self.random_exponent = group.random_exponent(self.entropy_f)
+        self.y1_elem = group.Base1.exp(self.random_exponent)
+        self.y2_elem = group.Base2.exp(self.random_exponent)
+        Y2_elem = self.y2_elem.elementmult.password_to_hash(self.pw)
 
-        return self.apk
+        #self.outbound_message = (self.y1+self.Y2) <-- apk
+        y1_bytes = self.y1_elem.to_bytes()
+        Y2_bytes = Y2_elem.to_bytes()
+        self.outbound_message =  y1_bytes + y2 _bytes
 
-    ########################################
-   
+        outbound_id_and_message = self.side + self.outbound_message
+
+        return outbound_id_and_message
+
     def dec(self, inbound_code):
         #dec with secret key sk an cipher text which gives either the c or error
         return
@@ -117,23 +117,17 @@ class PAPKE_A:
         if other_side not in (b"A", b"B"):
             raise OffSides("I don't know what side they're on")
         if self.side == other_side:
-            if self.side == SideA:
+            if self.side == ClientId:
                 raise OffSides("I'm A, but I got a message from A (not B).")
             else:
                 raise OffSides("I'm B, but I got a message from B (not A).")
         return inbound_message
 
 
-class SPAKE2_B:
+class PAPKE_Client:
     "This class manages one side of a SPAKE2 key negotiation."
 
-    side = SideB
-
-    def M(self):
-        return self.params.M
-
-    def N(self):
-        return self.params.N
+    self.side = ServerId
 
     def X_msg(self):
         return self.inbound_message
@@ -151,7 +145,6 @@ class SPAKE2_B:
     ):
 
         self.pw = password
-        self.pw_exponent = params.group.password_to_exponent(password)
 
         self.idA = idA
         self.idB = idB
@@ -164,21 +157,49 @@ class SPAKE2_B:
         self._finished = False
 
     def enc(self, inbound_message):
-        self.apk = self._extract_message(inbound_message)
-        self.session_k = os.urandom(32)
-        #enc using session_k, apk, and pw = ciphertext
+        #parse inbound_messahe
+        self.inbound_message = self._extract_message(inbound_message)
+        apk = parse_apk(self.inbound_message)
+        group = self.params.group
+        y1_elem = group.bytes_to_element(apk[0])
+        Y2_elem = group.bytes_to_element(apk[1])
 
-        return 
+        #enc_function
+        k = os.urandom(32)
+
+        pw_to_hash = group.password_to_hash(self.pw)
+        y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1))
+
+        random_exponent = group.random_exponent(self.entropy_f)
+        R_elem = group.Base1.exp(random_exponent)
+
+        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, k)
+
+        c1 = group.Base1.exp(r1).elementmult(group.Base2.exp(r2))
+        c2 = y1_elem.exp(r1).elementmult(y2_elem.exp(r2)).elementmult(R_elem)
+        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()), k)
+
+        #message
+        #self.outbound_message = c = (c1, c2, c3)
+        self.outbound_message = c1.to_bytes() + c2.to_bytes() + c3
+        outbound_sid_and_message = self.side + self.outbound_message
+        return outbound_sid_and_message
+    
+
+    def parse_apk(self, apk_bytes):
+        midPoint = len(apk_bytes) // 2
+        return apk_bytes[:midPoint], apk_bytes[midPoint:]
+        
 
     def _extract_message(self, inbound_side_and_message):
         other_side = inbound_side_and_message[0:1]
         inbound_message = inbound_side_and_message[1:]
 
-        if other_side not in (b"A", b"B"):
+        if other_side not in (b"C", b"S"):
             raise OffSides("I don't know what side they're on")
         if self.side == other_side:
-            if self.side == SideA:
-                raise OffSides("I'm A, but I got a message from A (not B).")
+            if self.side == ClientId:
+                raise OffSides("I'm C, but I got a message from C (not S).")
             else:
-                raise OffSides("I'm B, but I got a message from B (not A).")
+                raise OffSides("I'm S, but I got a message from S (not C).")
         return inbound_message

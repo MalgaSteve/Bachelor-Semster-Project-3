@@ -26,14 +26,38 @@ third. It has the following additional properties:
 
 def password_to_exponent(pw, exponent_size_bytes, q):
     h = Hkdf(salt=b"", input_key_material=pw, hash=hashlib.sha256)
-    info = b"SPAKE2 password"
-    expanded_password = h.expand(info, exponent_size_bytes + 16)
+    info = b"SPAKE2 password" expanded_password = h.expand(info, exponent_size_bytes + 16)
     i = bytes_to_number(expanded_password)
     pw_exponent = i % q
     return pw_exponent
 
 ###############################################
+# transforming and expanding secrets into bytes
 
+def key_to_2exponents(R, y1, y2, k, exponent_size_bytes, q):
+    ikm = R.to_bytes() + y1.to_bytes() + y2.to_bytes() + k
+    h = Hkdf(salt=b"", input_key_material=ikm, hash=hashlib.sha256)
+    info = b"SweetPAKE FO random exponents"
+    seed_rs = h.expand(info, 2 * exponent_size_bytes + 32)
+
+    (r1_bytes, r2_bytes) = splitInHalf(seed_rs)
+    r1_number = bytes_to_number(r1_bytes)
+    r2_number = bytes_to_number(r2_bytes)
+    r1_exponent = r1_number % q
+    r2_exponent = r2_number % q
+    
+    return (r1_exponent, r2_exponent)
+
+###############################################
+
+def splitInHalf(data):
+    midPoint = len(data) // 2
+    r1 = data[:midPoint]
+    r2 = data[midPoint:]
+    
+    return r1, r2
+
+###############################################
 
 def expand_arbitrary_element_seed(data, num_bytes):
     h = Hkdf(salt=b"", input_key_material=data, hash=hashlib.sha256)
@@ -120,6 +144,16 @@ class IntegerGroup:
         assert self._is_member(element)
         return element
 
+    def password_to_hash(self, pw):
+        return arbitrary_element(pw)
+
+    def secrets_to_hash(self, R, y1, y2, k):
+        return key_to_2exponents(R, y1, y2, k, self.exponent_size_bytes, self.q)
+
+    def xor(self, bytes1, bytes2):
+        xor = [a ^ b for a, b in zip(bytes1, bytes2)]
+        return bytes(xor)
+    
     def _is_member(self, e):
         if not e._group is self:
             return False
@@ -206,10 +240,10 @@ I3072 = IntegerGroup(
 class _Params:
     def __init__(self, group, M=b"M", N=b"N"):
         self.group = group
-        self.M = group.arbitrary_element(seed=M)
-        self.N = group.arbitrary_element(seed=N)
-        self.M_str = M
-        self.N_str = N
+        #self.M = group.arbitrary_element(seed=M)
+        #self.N = group.arbitrary_element(seed=N)
+        #self.M_str = M
+        #self.N_str = N
 
 
 # Params3072 has 128-bit security.
