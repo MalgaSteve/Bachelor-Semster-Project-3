@@ -106,21 +106,37 @@ class PAPKE_Client:
 
         return outbound_id_and_message
 
-    def dec(self, inbound_code):
-        #dec with secret key sk an cipher text which gives either the c or error
-        return
+    def dec(self, inbound_message):
+        #parse message
+        self.inbound_message = _extract_message(inbound_message)
+        (c1, c2, c3) = self._parse_key(self.inbound_message)
+
+        #computation
+        group = self.params.group
+        R_elem = c2.elementmult(c1.exp(-self.random_exponent))
+        session_key_computed = group.xor(c3, R_elem)
+        (r1, r2) = secrets_to_hash(R_elem, self.y1_elem, self.y2_elem, session_key_computed)
+        if c1 != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)):
+            raise IncorrectCode("Not the expected key")
+
+        self.session_key = session_key_computed
+        return self.session_key
+
+    def _parse_key(self, c):
+        elem_size = self.group.element_size_bits
+        return [:elem_size], [elem_size:2*elem_size], [2*elem_size:]
 
     def _extract_message(self, inbound_side_and_message):
         other_side = inbound_side_and_message[0:1]
         inbound_message = inbound_side_and_message[1:]
 
-        if other_side not in (b"A", b"B"):
+        if other_side not in (b"C", b"S"):
             raise OffSides("I don't know what side they're on")
         if self.side == other_side:
             if self.side == ClientId:
-                raise OffSides("I'm A, but I got a message from A (not B).")
+                raise OffSides("I'm C, but I got a message from C (not S).")
             else:
-                raise OffSides("I'm B, but I got a message from B (not A).")
+                raise OffSides("I'm S, but I got a message from S (not C).")
         return inbound_message
 
 
@@ -165,7 +181,7 @@ class PAPKE_Client:
         Y2_elem = group.bytes_to_element(apk[1])
 
         #enc_function
-        k = os.urandom(32)
+        self.session_k = os.urandom(32)
 
         pw_to_hash = group.password_to_hash(self.pw)
         y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1))
@@ -173,11 +189,11 @@ class PAPKE_Client:
         random_exponent = group.random_exponent(self.entropy_f)
         R_elem = group.Base1.exp(random_exponent)
 
-        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, k)
+        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, self.session_k)
 
         c1 = group.Base1.exp(r1).elementmult(group.Base2.exp(r2))
         c2 = y1_elem.exp(r1).elementmult(y2_elem.exp(r2)).elementmult(R_elem)
-        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()), k)
+        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()), self.session_k)
 
         #message
         #self.outbound_message = c = (c1, c2, c3)
