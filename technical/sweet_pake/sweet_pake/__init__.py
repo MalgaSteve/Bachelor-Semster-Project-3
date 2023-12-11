@@ -1,3 +1,3 @@
-from .papke import PAPKE_Client, PAPKE_Server, SPAKEError
+from .sweet_pake import SweetPAKE_Client, SweetPAKE_Server, SPAKEError
 
-PAPKE_Client, PAPKE_Server, SPAKEError  # hush pyflakes
+SweetPAKE_Client, SweetPAKE_Server, SPAKEError  # hush pyflakes

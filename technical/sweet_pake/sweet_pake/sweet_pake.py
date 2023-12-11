@@ -57,7 +57,7 @@ DefaultParams = Params3072
 # key = H(H(pw) + H(idA) + H(idB) + X* + Y* + KB)
 
 
-class PAPKE_Client:
+class SweetPAKE_Client:
     "This class manages one side of a SPAKE2 key negotiation."
 
     side = ClientId
@@ -116,7 +116,7 @@ class PAPKE_Client:
 
         #computation
         R_elem = c2.elementmult(c1.exp(-self.random_exponent))
-        session_key_computed = group.xor(c3, R_elem.to_bytes())
+        session_key_computed = group.xor(c3, hashlib.sha256(R_elem.to_bytes()).digest())
         (r1, r2) = group.secrets_to_hash(R_elem, self.y1_elem, self.y2_elem, session_key_computed)
         if c1.to_bytes() != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)).to_bytes():
             raise IncorrectCode("Not the expected key")
@@ -142,7 +142,7 @@ class PAPKE_Client:
         return inbound_message
 
 
-class PAPKE_Server:
+class SweetPAKE_Server:
     "This class manages one side of a SPAKE2 key negotiation."
 
     side = ServerId
@@ -183,7 +183,7 @@ class PAPKE_Server:
         Y2_elem = group.bytes_to_element(apk[1])
 
         #enc_function
-        self.session_k = os.urandom(32)
+        self.session_key = os.urandom(32)
 
         pw_to_hash = group.password_to_hash(self.pw)
         y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1)))
@@ -191,11 +191,11 @@ class PAPKE_Server:
         random_exponent = group.random_exponent(self.entropy_f)
         R_elem = group.Base1.exp(random_exponent)
 
-        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, self.session_k)
+        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, self.session_key)
 
         c1 = group.Base1.exp(r1).elementmult(group.Base2.exp(r2))
         c2 = y1_elem.exp(r1).elementmult(y2_elem.exp(r2)).elementmult(R_elem)
-        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()).digest(), self.session_k)
+        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()).digest(), self.session_key)
 
         #message
         #self.outbound_message = c = (c1, c2, c3)
