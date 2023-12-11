@@ -9,7 +9,7 @@ def main():
     from sweet_pake import SweetPAKE_Client, SweetPAKE_Server
     from sweet_pake.groups import Params3072
 
-    client = SweetPAKE_Client(b"our password", params=Params3072)
+    client = SweetPAKE_Client(b"Steve", b"our password", params=Params3072)
     server = SweetPAKE_Server(b"our password", params=Params3072)
 
     client_gen = client.gen()

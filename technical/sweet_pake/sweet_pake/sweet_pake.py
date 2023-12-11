@@ -70,6 +70,7 @@ class SweetPAKE_Client:
 
     def __init__(
         self,
+        username,
         password,
         idA=b"",
         idB=b"",
@@ -77,6 +78,7 @@ class SweetPAKE_Client:
         entropy_f=os.urandom,
     ):
 
+        self.username = username
         self.pw = password
 
         self.idA = idA
@@ -102,7 +104,9 @@ class SweetPAKE_Client:
         Y2_bytes = Y2_elem.to_bytes()
         self.outbound_message =  y1_bytes + Y2_bytes
 
-        outbound_id_and_message = self.side + self.outbound_message
+        username_size = len(self.username).to_bytes()
+
+        outbound_id_and_message = self.side + username_size + self.username + self.outbound_message
 
         return outbound_id_and_message
 
@@ -177,6 +181,12 @@ class SweetPAKE_Server:
     def enc(self, inbound_message):
         #parse inbound_messahe
         self.inbound_message = self._extract_message(inbound_message)
+
+        username_size = int.from_bytes(self.inbound_message[:1])
+        self.working_with = self.inbound_message[1:username_size+1]
+
+        self.inbound_message = self.inbound_message[username_size+1:]
+
         apk = self.parse_apk(self.inbound_message)
         group = self.params.group
         y1_elem = group.bytes_to_element(apk[0])
