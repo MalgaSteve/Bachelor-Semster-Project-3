@@ -60,7 +60,7 @@ def get_rnd_pw_word():
 
 
 def append_user_to_file(name, pw):
-    k = 4
+    k = 3
     sugarwords = gen_by_model(pw, k)
     for i in range(len(sugarwords)):
         sugarwords += gen_chaff_digits(sugarwords[i], k)
@@ -94,3 +94,7 @@ def fisher_yates(arr):
 
 
 append_user_to_file("Marie", "stenkt420")
+append_user_to_file("Steve", "stenkt420")
+append_user_to_file("Marjan", "stenkt420")
+append_user_to_file("Bob", "stenkt420")
+append_user_to_file("Alice", "stenkt420")

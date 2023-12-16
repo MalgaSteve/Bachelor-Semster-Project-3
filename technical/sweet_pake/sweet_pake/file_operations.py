@@ -1,6 +1,6 @@
 import os.path
 
-def get_dictionary_from_entries(filename):
+def get_dict_from_entries(filename):
     entries = read_file(filename)
     database = {}
     for entry in entries:
@@ -17,5 +17,3 @@ def read_file(filename):
             entries = f.read().splitlines()
 
     return entries
-
-print(get_dictionary_from_entries("pw_file"))

@@ -4,6 +4,7 @@ from hashlib import sha256
 import hashlib
 import hmac
 from hkdf import Hkdf
+from .file_operations import get_dict_from_entries
 from .groups import Params3072, _Params
 
 # Exceptions
@@ -167,12 +168,15 @@ class SweetPAKE_Server:
     ):
 
         self.pw = password
-
+        
         self.idA = idA
         self.idB = idB
 
         self.params = params
         self.entropy_f = entropy_f
+
+        self.database = get_dict_from_entries("./pw_file")
+        print(self.database)
 
         self._started = False
         self._computed = False
@@ -182,6 +186,7 @@ class SweetPAKE_Server:
         #parse inbound_messahe
         self.inbound_message = self._extract_message(inbound_message)
 
+        #get username from message
         username_size = int.from_bytes(self.inbound_message[:1])
         self.working_with = self.inbound_message[1:username_size+1]
 
@@ -212,6 +217,10 @@ class SweetPAKE_Server:
         self.outbound_message = c1.to_bytes() + c2.to_bytes() + c3
         outbound_sid_and_message = self.side + self.outbound_message
         return outbound_sid_and_message
+    
+    def prf(y1, Y2, group):
+        k = os.urandom(32)
+        group.
     
 
     def parse_apk(self, apk_bytes):

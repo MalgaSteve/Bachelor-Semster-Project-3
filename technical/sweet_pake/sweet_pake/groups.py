@@ -60,9 +60,27 @@ def splitInHalf(data):
 
 ###############################################
 
+###############################################
+
+def secrets_to_vector_of_keys(k, y1, Y2, n, q):
+    ikm = y1.to_bytes() + y2.to_bytes() + k
+    h = Hkdf(salt=b"", input_key_material=ikm, hash=hashlib.sha256)
+    info = b"SweetPAKE vector of keys"
+    length_seed_rs = n * exponent_size_bytes + n*16
+    seed_rs = h.expand(info, length_seed_rs)
+
+    length_key = len(seed_rs) // n
+    keys = []
+    for index in range(n):
+        keys.append(seed_rs[index*n:index*n+length_key])
+
+    return keys
+
+###############################################
+
 def expand_arbitrary_element_seed(data, num_bytes):
     h = Hkdf(salt=b"", input_key_material=data, hash=hashlib.sha256)
-    info = b"SPAKE2 arbitrary element"
+    info = b"SweetPAKE arbitrary element"
     return h.expand(info, num_bytes)
 
 
