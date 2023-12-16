@@ -4,7 +4,7 @@ from hashlib import sha256
 import hashlib
 import hmac
 from hkdf import Hkdf
-from .file_operations import get_dict_from_entries
+from .file_operations import get_dict_from_entries, fisher_yates
 from .groups import Params3072, _Params
 
 # Exceptions
@@ -176,7 +176,6 @@ class SweetPAKE_Server:
         self.entropy_f = entropy_f
 
         self.database = get_dict_from_entries("./pw_file")
-        print(self.database)
 
         self._started = False
         self._computed = False
@@ -188,7 +187,8 @@ class SweetPAKE_Server:
 
         #get username from message
         username_size = int.from_bytes(self.inbound_message[:1])
-        self.working_with = self.inbound_message[1:username_size+1]
+        self.working_with = self.inbound_message[1:username_size+1].decode('utf-8')
+        print(self.database[self.working_with])
 
         self.inbound_message = self.inbound_message[username_size+1:]
 
@@ -196,31 +196,44 @@ class SweetPAKE_Server:
         group = self.params.group
         y1_elem = group.bytes_to_element(apk[0])
         Y2_elem = group.bytes_to_element(apk[1])
+        client_pw_array = self.database[self.working_with]
+
+        #PRF - get array of keys
+        self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array))
+        self.ciphers = []
 
         #enc_function
-        self.session_key = os.urandom(32)
+        for i in range(n):
+            gen_ciphers = papke_gen(group, y1_elem, Y2_elem, client_pw_array[i], self.arr_K[i])
+            ciphers.append(gen_ciphers)
+        
+        #shuffle cipher array
+        self.rp_ciphers = fisher_yates(self.ciphers)
 
-        pw_to_hash = group.password_to_hash(self.pw)
+        #message
+        #self.outbound_message = c = (c1, c2, c3)
+        self.outbound_message = sum(self.rp_ciphers)
+        outbound_sid_and_message = self.side + self.outbound_message
+        return outbound_sid_and_message
+
+    def papke_gen(self, group, y1_elem, Y2_elem, pw, session_key)
+        session_key = os.urandom(32)
+
+        pw_to_hash = group.password_to_hash(pw)
         y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1)))
 
         random_exponent = group.random_exponent(self.entropy_f)
         R_elem = group.Base1.exp(random_exponent)
 
-        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, self.session_key)
+        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, session_key)
 
         c1 = group.Base1.exp(r1).elementmult(group.Base2.exp(r2))
         c2 = y1_elem.exp(r1).elementmult(y2_elem.exp(r2)).elementmult(R_elem)
-        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()).digest(), self.session_key)
+        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()).digest(), session_key)
 
-        #message
-        #self.outbound_message = c = (c1, c2, c3)
-        self.outbound_message = c1.to_bytes() + c2.to_bytes() + c3
-        outbound_sid_and_message = self.side + self.outbound_message
-        return outbound_sid_and_message
-    
-    def prf(y1, Y2, group):
-        k = os.urandom(32)
-        group.
+        C = c1.to_bytes() + c2.to_bytes() + c3
+
+        return C
     
 
     def parse_apk(self, apk_bytes):

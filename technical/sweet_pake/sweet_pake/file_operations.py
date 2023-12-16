@@ -17,3 +17,9 @@ def read_file(filename):
             entries = f.read().splitlines()
 
     return entries
+
+
+def fisher_yates(arr):
+    for i in range(1, len(arr)):
+        j = random.randint(0, i)
+        arr[j], arr[-i] = arr[-i], arr[j]
