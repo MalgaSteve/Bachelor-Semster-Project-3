@@ -115,7 +115,35 @@ class SweetPAKE_Client:
         #parse message
         group = self.params.group
         self.inbound_message = self._extract_message(inbound_message)
-        (c1, c2, c3) = self._parse_key(self.inbound_message)
+
+        len_ciphers = int.from_bytes(self.inbound_message[:1])
+        if len_ciphers < 0:
+            raise ValueError("Invalid size")
+
+        self.inbound_message = self.inbound_message[1:]
+        ciphers = self._parse_array(self.inbound_message, len_ciphers)
+        index = -1
+
+        #dec
+        for i in range(len(ciphers)):
+            session_key_computed = self._papke_dec(group, ciphers[i])
+            
+            #checks if decryption is successful
+            if session_key_computed != -1:
+                index = i
+                break
+
+        if index == -1:
+            raise ValueError("Could not decrypt")
+
+        self.session_key = session_key_computed
+
+        self.second_outbound_message = i.to_bytes()
+
+        return self.side + self.second_outbound_message
+
+    def _papke_dec(self, group, cipher_tuple):
+        (c1, c2, c3) = self._parse_key(cipher_tuple)
         c1 = group.bytes_to_element(c1)
         c2 = group.bytes_to_element(c2)
 
@@ -123,11 +151,19 @@ class SweetPAKE_Client:
         R_elem = c2.elementmult(c1.exp(-self.random_exponent))
         session_key_computed = group.xor(c3, hashlib.sha256(R_elem.to_bytes()).digest())
         (r1, r2) = group.secrets_to_hash(R_elem, self.y1_elem, self.y2_elem, session_key_computed)
-        if c1.to_bytes() != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)).to_bytes():
-            raise IncorrectCode("Not the expected key")
 
-        self.session_key = session_key_computed
-        return self.session_key
+        if c1.to_bytes() != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)).to_bytes():
+            return -1
+
+        return session_key_computed
+
+
+    def _parse_array(self, message, size):
+        arr = []
+        length_cipher = len(message) // size
+        for i in range(size):
+            arr.append(message[i*length_cipher:length_cipher*i+length_cipher])
+        return arr
 
     def _parse_key(self, c):
         elem_size = self.params.group.element_size_bytes
@@ -188,7 +224,6 @@ class SweetPAKE_Server:
         #get username from message
         username_size = int.from_bytes(self.inbound_message[:1])
         self.working_with = self.inbound_message[1:username_size+1].decode('utf-8')
-        print(self.database[self.working_with])
 
         self.inbound_message = self.inbound_message[username_size+1:]
 
@@ -199,27 +234,30 @@ class SweetPAKE_Server:
         client_pw_array = self.database[self.working_with]
 
         #PRF - get array of keys
-        self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array))
+        #k = os.urandom(32)
+        #self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array))
+        self.arr_K = []
         self.ciphers = []
 
         #enc_function
-        for i in range(n):
-            gen_ciphers = papke_gen(group, y1_elem, Y2_elem, client_pw_array[i], self.arr_K[i])
-            ciphers.append(gen_ciphers)
+        for i in range(len(client_pw_array)):
+            gen_ciphers = self._papke_enc(group, y1_elem, Y2_elem, client_pw_array[i])
+            self.ciphers.append(gen_ciphers)
         
         #shuffle cipher array
-        self.rp_ciphers = fisher_yates(self.ciphers)
+        rp_ciphers, self.pmap = fisher_yates(self.ciphers)
 
         #message
         #self.outbound_message = c = (c1, c2, c3)
-        self.outbound_message = sum(self.rp_ciphers)
-        outbound_sid_and_message = self.side + self.outbound_message
+        self.outbound_message = b"".join(rp_ciphers)
+        outbound_sid_and_message = self.side + len(rp_ciphers).to_bytes() + self.outbound_message
         return outbound_sid_and_message
 
-    def papke_gen(self, group, y1_elem, Y2_elem, pw, session_key)
+    def _papke_enc(self, group, y1_elem, Y2_elem, pw):
         session_key = os.urandom(32)
+        self.arr_K.append(session_key)
 
-        pw_to_hash = group.password_to_hash(pw)
+        pw_to_hash = group.password_to_hash(bytes.fromhex(pw))
         y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1)))
 
         random_exponent = group.random_exponent(self.entropy_f)
@@ -234,13 +272,21 @@ class SweetPAKE_Server:
         C = c1.to_bytes() + c2.to_bytes() + c3
 
         return C
-    
 
     def parse_apk(self, apk_bytes):
         size_bytes = self.params.group.element_size_bytes
         return apk_bytes[:size_bytes], apk_bytes[size_bytes:]
-        
 
+    def retrieve_key_ask_honeychecker(self, inbound_message):
+        self.second_inbound_message = self._extract_message(inbound_message)
+        index = int.from_bytes(self.second_inbound_message)
+        original_index = self.pmap[index]
+        self.session_key = self.arr_K[original_index]
+
+        # todo verify honeychecker
+
+        return self.session_key
+        
     def _extract_message(self, inbound_side_and_message):
         other_side = inbound_side_and_message[0:1]
         inbound_message = inbound_side_and_message[1:]

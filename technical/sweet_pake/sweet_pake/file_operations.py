@@ -1,4 +1,5 @@
 import os.path
+import random
 
 def get_dict_from_entries(filename):
     entries = read_file(filename)
@@ -19,7 +20,13 @@ def read_file(filename):
     return entries
 
 
-def fisher_yates(arr):
-    for i in range(1, len(arr)):
+def fisher_yates(input_array):
+    arr = input_array.copy()
+    pmap = list(range(len(arr)))
+
+    for i in range(len(arr)-1, -1, -1):
         j = random.randint(0, i)
-        arr[j], arr[-i] = arr[-i], arr[j]
+        arr[j], arr[i] = arr[i], arr[j]
+        pmap[j], pmap[i] = pmap[i], pmap[j]
+
+    return arr, pmap
