@@ -62,7 +62,7 @@ def splitInHalf(data):
 
 ###############################################
 
-def secrets_to_array_of_keys(k, y1, Y2, n, exponent_size_bytes, q):
+def secrets_to_array_of_keys(k, y1, Y2, n, length_bytes, q):
     ikm = y1.to_bytes() + Y2.to_bytes() + k
     h = Hkdf(salt=b"", input_key_material=ikm, hash=hashlib.sha256)
     info = b"SweetPAKE vector of keys"
