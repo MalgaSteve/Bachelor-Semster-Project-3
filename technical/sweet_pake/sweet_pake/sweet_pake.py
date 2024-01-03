@@ -234,14 +234,14 @@ class SweetPAKE_Server:
         client_pw_array = self.database[self.working_with]
 
         #PRF - get array of keys
-        #k = os.urandom(32)
-        #self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array))
-        self.arr_K = []
+        k = os.urandom(32)
+        self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array), 32)
+        #self.arr_K = []
         self.ciphers = []
 
         #enc_function
         for i in range(len(client_pw_array)):
-            gen_ciphers = self._papke_enc(group, y1_elem, Y2_elem, client_pw_array[i])
+            gen_ciphers = self._papke_enc(group, y1_elem, Y2_elem, client_pw_array[i], self.arr_K[i])
             self.ciphers.append(gen_ciphers)
         
         #shuffle cipher array
@@ -253,9 +253,9 @@ class SweetPAKE_Server:
         outbound_sid_and_message = self.side + len(rp_ciphers).to_bytes() + self.outbound_message
         return outbound_sid_and_message
 
-    def _papke_enc(self, group, y1_elem, Y2_elem, pw):
-        session_key = os.urandom(32)
-        self.arr_K.append(session_key)
+    def _papke_enc(self, group, y1_elem, Y2_elem, pw, session_key):
+        #session_key = os.urandom(32)
+        #self.arr_K.append(session_key)
 
         pw_to_hash = group.password_to_hash(bytes.fromhex(pw))
         y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1)))

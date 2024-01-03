@@ -62,12 +62,12 @@ def splitInHalf(data):
 
 ###############################################
 
-def secrets_to_array_of_keys(k, y1, Y2, n, length_bytes, q):
+def secrets_to_array_of_keys(k, y1, Y2, n, length_bytes):
     ikm = y1.to_bytes() + Y2.to_bytes() + k
     h = Hkdf(salt=b"", input_key_material=ikm, hash=hashlib.sha256)
     info = b"SweetPAKE vector of keys"
-    length_seed_rs = n * exponent_size_bytes + n*16
-    seed_rs = h.expand(info, length_seed_rs)
+    length_seed_rs = length_bytes
+    seed_rs = h.expand(info, n*length_seed_rs)
 
     length_key = len(seed_rs) // n
     keys = []
@@ -173,8 +173,8 @@ class IntegerGroup:
         xor = [a ^ b for a, b in zip(bytes1, bytes2)]
         return bytes(xor)
     
-    def secrets_to_array(self, k, y1, Y2, n):
-        return secrets_to_array_of_keys(k, y1, Y2, n, self.exponent_size_bytes, self.q)
+    def secrets_to_array(self, k, y1, Y2, n, length_bytes):
+        return secrets_to_array_of_keys(k, y1, Y2, n, length_bytes)
     
     def _is_member(self, e):
         if not e._group is self:

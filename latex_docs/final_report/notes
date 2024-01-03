@@ -1,0 +1,44 @@
+How to detect if a password file is in possession of intruders and at the same
+time prevent phishing attacks?
+
+Subquestions:
+	What is phising?
+	Why should you want preventing this?
+
+
+Interpret:
+    Introduction
+    	Overview:
+            *Describe password file
+            Define phishing attacks --> Illustrate?
+
+	Related Work
+
+    Honeywords
+        Analyse Honeywords --> detect if a file is in possession of intruders
+        Analyse PAKE and protocols --> prevents phishing?
+        SweetPake
+
+
+    PAKE
+    	Introduction
+	EKE
+	SPAKE
+	PAPKE
+
+
+    SweetPAKE
+        BeePAKE
+
+    Application:
+    	Design
+	Implementation
+    	    generate random passwords
+	    pw_file
+	    file_operations
+	    group math
+	    protocol
+
+    Conclusion
+    References
+    	honeywords
