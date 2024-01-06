@@ -1,11 +1,22 @@
-\documentclass[10pt,journal]{IEEEtran}
-\usepackage{datetime2}
+\documentclass[conference, compsoc]{IEEEtran}
+\usepackage{datetime}
+\usepackage[style=ieee]{biblatex}
+\usepackage{subfiles}
+
+\addbibresource{biblio.bib}
+
 \begin{document}
 
-\title{PAKE protocols and Decoy passwords}
-\author{Steve Meireles \\
-Email: steve.meireles.001@student.uni.lu}
-\date{January 2024}
+\title{PAKE protocols and Decoy passwords\\
+{\small \today~-~\currenttime}}
+
+\author{
+    \IEEEauthorblockA{Steve Meireles Lopes\\
+    University of Luxembourg\\
+    Email: steve.meireles.001@student.uni.lu}\\
+    {\bf This report has been produced under the supervision of:}\\
+    \IEEEauthorblockN{Marjan Skrobot\\
+    University of Luxembourg}}
 
 \maketitle
 
@@ -16,24 +27,25 @@ Email: steve.meireles.001@student.uni.lu}
 \end{IEEEkeywords}
 
 \section{Introduction}
-\subsection{Overview}
-\subsection{Related Work}
+\subfile{sections/introduction}
 
 \section{Honeywords}
+\subfile{sections/honeywords}
 
 \section{PAKE protocols}
-\subsection{EKE}
-\subsection{PAPKE}
+\subfile{sections/PAKE}
 
 \section{SweetPAKE}
+\subfile{sections/sweetPAKE}
 
 \section{Application}
-\subsection{Design}
-\subsection{Implementation}
+\subfile{sections/application}
 
 \section{Conclusion}
+\subfile{sections/conclusion}
 
 \section{References}
+\printbibliography
 
 \section{Appendix}
 
