@@ -16,5 +16,258 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{juels2013honeywords}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=c865ec9228baea73d3d6c2c3faa7bcc7}{%
+           family={Juels},
+           familyi={J\bibinitperiod},
+           given={Ari},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{fullhash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{bibnamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authorbibnamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authornamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authorfullhash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2013 ACM SIGSAC conference on Computer \& communications security}
+      \field{title}{Honeywords: Making password-cracking detectable}
+      \field{year}{2013}
+      \field{pages}{145\bibrangedash 160}
+      \range{pages}{16}
+    \endentry
+    \entry{bellare2000authenticated}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=06e2bb2f83d8b669b46db64431509301}{%
+           family={Bellare},
+           familyi={B\bibinitperiod},
+           given={Mihir},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8477cabfb261c3696163854eae25beb1}{%
+           family={Pointcheval},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2198941c13b8201b0e0d2127034bb263}{%
+           family={Rogaway},
+           familyi={R\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c05f79dce105554bb6067a1d7b055259}
+      \strng{fullhash}{c05f79dce105554bb6067a1d7b055259}
+      \strng{bibnamehash}{c05f79dce105554bb6067a1d7b055259}
+      \strng{authorbibnamehash}{c05f79dce105554bb6067a1d7b055259}
+      \strng{authornamehash}{c05f79dce105554bb6067a1d7b055259}
+      \strng{authorfullhash}{c05f79dce105554bb6067a1d7b055259}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International conference on the theory and applications of cryptographic techniques}
+      \field{title}{Authenticated key exchange secure against dictionary attacks}
+      \field{year}{2000}
+      \field{pages}{139\bibrangedash 155}
+      \range{pages}{17}
+    \endentry
+    \entry{boyko2000provably}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=074d78b109f7b7afcbb186b918ca58b3}{%
+           family={Boyko},
+           familyi={B\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod}}}%
+        {{hash=5a7f6fc7d55c5c3763eb14cb0dcf3a0f}{%
+           family={MacKenzie},
+           familyi={M\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3be8b33b00cd438013b02816f7f45368}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Sarvar},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{6c64448dab63668b729d680b1b4029a4}
+      \strng{fullhash}{6c64448dab63668b729d680b1b4029a4}
+      \strng{bibnamehash}{6c64448dab63668b729d680b1b4029a4}
+      \strng{authorbibnamehash}{6c64448dab63668b729d680b1b4029a4}
+      \strng{authornamehash}{6c64448dab63668b729d680b1b4029a4}
+      \strng{authorfullhash}{6c64448dab63668b729d680b1b4029a4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Cryptology—EUROCRYPT 2000: International Conference on the Theory and Application of Cryptographic Techniques Bruges, Belgium, May 14--18, 2000 Proceedings 19}
+      \field{title}{Provably secure password-authenticated key exchange using Diffie-Hellman}
+      \field{year}{2000}
+      \field{pages}{156\bibrangedash 171}
+      \range{pages}{16}
+    \endentry
+    \entry{canetti2005universally}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=7faf0f3900af6c70795ea089d283f02e}{%
+           family={Canetti},
+           familyi={C\bibinitperiod},
+           given={Ran},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7c86404bf6ef06056efb632aff16d2c0}{%
+           family={Halevi},
+           familyi={H\bibinitperiod},
+           given={Shai},
+           giveni={S\bibinitperiod}}}%
+        {{hash=85053e14c4a72772970b91a572b9b9c1}{%
+           family={Katz},
+           familyi={K\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e20af851262c583d34b7a667a7039cb4}{%
+           family={Lindell},
+           familyi={L\bibinitperiod},
+           given={Yehuda},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=31416c072b870686e4e39664327bb916}{%
+           family={MacKenzie},
+           familyi={M\bibinitperiod},
+           given={Phil},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{6f3b33c3c14cad1a49f8c608b60e5018}
+      \strng{fullhash}{fba07622a1e0a7fa27048dc64a8d7da9}
+      \strng{bibnamehash}{fba07622a1e0a7fa27048dc64a8d7da9}
+      \strng{authorbibnamehash}{fba07622a1e0a7fa27048dc64a8d7da9}
+      \strng{authornamehash}{6f3b33c3c14cad1a49f8c608b60e5018}
+      \strng{authorfullhash}{fba07622a1e0a7fa27048dc64a8d7da9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Cryptology--EUROCRYPT 2005: 24th Annual International Conference on the Theory and Applications of Cryptographic Techniques, Aarhus, Denmark, May 22-26, 2005. Proceedings 24}
+      \field{title}{Universally composable password-based key exchange}
+      \field{year}{2005}
+      \field{pages}{404\bibrangedash 421}
+      \range{pages}{18}
+    \endentry
+    \entry{bradley2019password}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=73c8ca367858ee2e5585e57138de945d}{%
+           family={Bradley},
+           familyi={B\bibinitperiod},
+           given={Tatiana},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7ee2bdf724d3560932a81321ec74f23f}{%
+           family={Camenisch},
+           familyi={C\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=28abbd2c4efcd4c8ee864ae8e7a002e9}{%
+           family={Jarecki},
+           familyi={J\bibinitperiod},
+           given={Stanislaw},
+           giveni={S\bibinitperiod}}}%
+        {{hash=586b1924d576086f65c68d45b1268724}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Anja},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4ce119fc14821a47944904ada0bda23f}{%
+           family={Neven},
+           familyi={N\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2202df79a8553afc4c258e66012f606b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Jiayu},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d0364510a5b971c38fa871737169feb7}
+      \strng{fullhash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \strng{bibnamehash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \strng{authorbibnamehash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \strng{authornamehash}{d0364510a5b971c38fa871737169feb7}
+      \strng{authorfullhash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Applied Cryptography and Network Security: 17th International Conference, ACNS 2019, Bogota, Colombia, June 5--7, 2019, Proceedings 17}
+      \field{title}{Password-authenticated public-key encryption}
+      \field{year}{2019}
+      \field{pages}{442\bibrangedash 462}
+      \range{pages}{21}
+    \endentry
+    \entry{marjan2023}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=f5c2dc41ddf08fa635153339a7fc80d0}{%
+           family={Skrobot},
+           familyi={S\bibinitperiod},
+           given={Marjan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{fullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{bibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authorbibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authornamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authorfullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SweetPAKE}
+      \field{title}{SweetPAKE: Key exchange with decoy passwords}
+      \field{year}{2023}
+    \endentry
+    \entry{Warner2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dabef448fac48c6137ca1cfae1ffa156}{%
+           family={Warner},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{dabef448fac48c6137ca1cfae1ffa156}
+      \strng{fullhash}{dabef448fac48c6137ca1cfae1ffa156}
+      \strng{bibnamehash}{dabef448fac48c6137ca1cfae1ffa156}
+      \strng{authorbibnamehash}{dabef448fac48c6137ca1cfae1ffa156}
+      \strng{authornamehash}{dabef448fac48c6137ca1cfae1ffa156}
+      \strng{authorfullhash}{dabef448fac48c6137ca1cfae1ffa156}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/warner/python-spake2}}
+      \field{journaltitle}{GitHub repository}
+      \field{title}{python-spake2}
+      \field{year}{2016}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

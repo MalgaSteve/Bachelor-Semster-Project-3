@@ -1,4 +1,4 @@
-PWD /home/malga/Documents/semester3/Bachelor-Semester-Project-3/latex_docs/final_report
+PWD /home/malga/Documents/Bachelor-Semester-Project-3/latex_docs/final_report
 INPUT /var/lib/texmf/web2c/luahbtex/lualatex.fmt
 INPUT ./main.tex
 OUTPUT main.log
@@ -220,6 +220,18 @@ INPUT ./sections/conclusion.tex
 INPUT ./sections/conclusion.tex
 OUTPUT main.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm
 INPUT ./main.aux
 INPUT ./main.run.xml
 OUTPUT main.run.xml

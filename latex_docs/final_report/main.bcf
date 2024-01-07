@@ -2365,6 +2365,13 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">biblio.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">juels2013honeywords</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">bellare2000authenticated</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">boyko2000provably</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">canetti2005universally</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">bradley2019password</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">marjan2023</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Warner2016</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

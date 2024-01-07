@@ -4,10 +4,44 @@
 
 \subsection{Overview}
 Since the invention of personal computers, a username and password combination
-has been one of the most used authentication methods until today. Even though it is 
-known that it has various drawbacks and weaknesses; including, humans being bad
-at making up strong and unpredictable passwords which makes it vulnerable to
-dictionary attacks. 
+has been one of the most used authentication methods until today. Even though
+it is known that it has various drawbacks and weaknesses; including, humans
+being bad at making up strong and unpredictable passwords which makes it
+vulnerable to brute force and dictionary attacks. A problem a system
+administrator also has to solve is how to store the usernames and passwords.
+This is usually done in a password file (Example Linux: /etc/shadow
+/etc/passwd). In the past enterprises struggled with data breaches being open
+without them realizing or realizing too late, which resulted in leakage of their
+password files. This can be devastating to them and their clients. To make a
+system more secure one can incorporate fake accounts in the password file,
+therefore if somebody tries to enter the system using a fake account, the
+system administrator will be alarmed and know that the password file is in
+possession of outsiders. This report will analyze several security mechanisms
+one of them being fake passwords also called honeywords proposed by Juels and
+Rivest \cite{juels2013honeywords}.  
+
+Although weak passwords are not secure they have some benefits, one of them is
+being very user-friendly and easy to remember. Nowadays, several protocols make
+it possible to securely authenticate peers by agreeing on a session key using a
+weak password. Such protocols are called PAKE protocols
+\cite{bellare2000authenticated}\cite{boyko2000provably}\cite{canetti2005universally}.
+This report is going to analyze the PAPKE protocol of Bradley, Gamenisch,
+Jarecki, Lehmann, Neven, and Xu \cite{bradley2019password} in detail, which is a
+PAKE protocol using a public key. This protocol enables the ability to
+authenticate for example a browser without needing to trust a third party by
+using certificates, which is vulnerable to phishing attacks where attackers can
+pretend to be the authentication server.
+
+The paper SweetPAKE of Skrobot and ... (need to ask the Tutor the name)
+\cite{marjan2023} shows several approaches to combine both principles
+Honeywords and PAKE. They highlight the secure approaches and implementation.
+This report revolves mainly around the SweetPAKE paper, it analyzes the
+different approaches and offers an implementation of one approach. The
+implementation uses parts of code of the SPAKE2 implementation of warner \cite{Warner2016}.
+
+Analyzing Honeywords, PAKE protocols, and SweetPAKE, this report tries to
+answer the question: How to detect if a password file is in possession of
+intruders and at the same time prevent phishing attacks? 
 
 \subsection{Related Work}
 
