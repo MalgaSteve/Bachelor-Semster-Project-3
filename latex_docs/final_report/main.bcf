@@ -2372,6 +2372,9 @@
     <bcf:citekey order="5" intorder="1">bradley2019password</bcf:citekey>
     <bcf:citekey order="6" intorder="1">marjan2023</bcf:citekey>
     <bcf:citekey order="7" intorder="1">Warner2016</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">juels2013honeywords</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">passwd</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">shadow</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

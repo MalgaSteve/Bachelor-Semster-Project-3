@@ -267,6 +267,22 @@
       \field{title}{python-spake2}
       \field{year}{2016}
     \endentry
+    \entry{passwd}{manual}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{PASSWD(5) Linux User's Manual}
+      \field{year}{2023}
+    \endentry
+    \entry{shadow}{manual}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{title}{Shadow(5) Linux User's Manual}
+      \field{year}{2023}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
