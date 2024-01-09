@@ -2,6 +2,41 @@
 
 \begin{document}
 
+PAKE is an abbreviation for Password Authenticated Key Exchange, such protocols
+make it possible to have a secure communication using a weak shared secret key.
+As already mentioned in the introduction there are several PAKE protocols. In
+this section we are going first to look at some basic mandatory knowledge
+needed to understand these protocols by explaining Cyclic Groups and the
+Diffie-Hellman protocol. After that we are going to look at two protocols in
+detail: EKE and PAPKE. EKE is a rather simpler PAKE protocol and PAPKE is an
+important protocol because in the following section the SweetPAKE protocol is
+build upon exactly this protocol.
+
+\subsection{Cyclic Groups}
+
+\subsubsection{Group}
+A group \(g\) is structure that consists of a set of elements and an operation \(\cdot\)
+that satifies four propreties: 
+
+Closure: \[\forall g, h \in G,  g \cdot h \in G\]
+Identity element: \[\exists i \in G, \forall g \in G, i \cdot g = g =
+g \cdot e\]
+Associativity: \[\forall g_1, g_2, g_3 \in G, (g_1 \cdot g_2) \cdot g_3 = g_1
+\cdot (g_2 \cdot g_3)\]
+Inverses:\[\forall g \in G \exists h \in G, g \cdot h = e = h \cdot g\]
+
+\subsubsection{Generator}
+A generator \(g\) is an element of a cyclic group \(G\), such that \(g\) when repeatedly using
+a group operation \(\cdot\) on itself, it can generate all elements of \(G\).
+
+\subsubsection{Definition} A group \(G\) is cyclic if there exists \(g \in G\)
+such that \(g\) is a generator.
+
+Important note: If \(G\) is a cyclic group and has generator \(g\) then \[G =
+\{a^n | n \in \mathbb{Z}\}\]
+
+
+\subsection{Diffie Hellman}
 \subsection{EKE}
 \subsection{PAPKE}
 
