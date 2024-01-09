@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2023.12.18)  9 JAN 2024 15:26
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2023.12.18)  9 JAN 2024 17:35
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1030,7 +1030,7 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 46.
+(Font)              using `TU/ptm/bx/n' instead on input line 47.
 
 )
 
@@ -1204,27 +1204,32 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 18.
+(Font)              using `TU/ptm/bx/n' instead on input line 19.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 29.
+(Font)              using `TU/ptm/bx/n' instead on input line 30.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 32.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 38.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 39.
+(Font)              using `TU/ptm/bx/n' instead on input line 33.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 40.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 42.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 68.
+
+[4]
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 115.
 
 )
 
@@ -1260,8 +1265,8 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 53.
 
 
-Underfull \hbox (badness 3088) in paragraph at lines 54--54
-\TU/ptm/bx/it/10.03749 22-26, 2005. Pro-ceed-ings 24, Springer, 2005,
+Underfull \hbox (badness 2012) in paragraph at lines 54--54
+\TU/ptm/bx/it/10.03749 Con-fer-ence on the The-ory and Ap-pli-ca-tions
  []
 
 
@@ -1279,7 +1284,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (./main.aux)
+[5] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1289,14 +1294,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 23950 strings out of 478285
+ 23954 strings out of 478285
  125007,1977958 words of node,token memory allocated
- 542 words of node memory still in use:
-   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 16 attribute, 65 glue_spec
-, 16 attribute_list, 2 write nodes
-   avail lists: 1:7,2:1596,3:651,4:48,5:747,6:94,7:12369,8:39,9:824,10:17,11:889
-
- 43277 multiletter control sequences out of 65536+600000
+ 582 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 26 attribute, 65 glue_spec
+, 26 attribute_list, 2 write nodes
+   avail lists: 1:10,2:1577,3:651,4:52,5:744,6:94,7:12391,8:39,9:824,10:20,11:88
+9
+ 43281 multiletter control sequences out of 65536+600000
  90 fonts using 6229087 bytes
  100i,10n,98p,1128b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share
@@ -1310,10 +1315,10 @@ st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (4 pages, 101881 bytes).
+Output written on main.pdf (5 pages, 110510 bytes).
 
-PDF statistics: 83 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+PDF statistics: 86 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

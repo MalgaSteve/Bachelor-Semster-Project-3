@@ -24,13 +24,14 @@ Although weak passwords are not secure they have some benefits, one of them is
 being very user-friendly and easy to remember. Nowadays, several protocols make
 it possible to securely authenticate peers by agreeing on a session key using a
 weak password. Such protocols are called PAKE protocols
-\cite{bellare2000authenticated}\cite{boyko2000provably}\cite{canetti2005universally}.
-This report is going to analyze the PAPKE protocol of Bradley, Gamenisch,
-Jarecki, Lehmann, Neven, and Xu \cite{bradley2019password} in detail, which is a
-PAKE protocol using a public key. This protocol enables the ability to
-authenticate for example a browser without needing to trust a third party by
-using certificates, which is vulnerable to phishing attacks where attackers can
-pretend to be the authentication server.
+\cite{bellovin1992encrypted} \cite{bellare2000authenticated}
+\cite{boyko2000provably} \cite{canetti2005universally}. This report is going to
+analyze the PAPKE protocol of Bradley, Gamenisch, Jarecki, Lehmann, Neven, and
+Xu \cite{bradley2019password} in detail, which is a PAKE protocol using a
+public key. This protocol enables the ability to authenticate for example a
+browser without needing to trust a third party by using certificates, which is
+vulnerable to phishing attacks where attackers can pretend to be the
+authentication server.
 
 The paper SweetPAKE of Skrobot and ... (need to ask the Tutor the name)
 \cite{marjan2023} shows several approaches to combine both principles

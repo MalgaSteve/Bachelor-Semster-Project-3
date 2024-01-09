@@ -13,6 +13,7 @@ important protocol because in the following section the SweetPAKE protocol is
 build upon exactly this protocol.
 
 \subsection{Cyclic Groups}
+This subsection covers math base for the upcoming section.
 
 \subsubsection{Group}
 A group \(g\) is structure that consists of a set of elements and an operation \(\cdot\)
@@ -35,9 +36,82 @@ such that \(g\) is a generator.
 Important note: If \(G\) is a cyclic group and has generator \(g\) then \[G =
 \{a^n | n \in \mathbb{Z}\}\]
 
+\subsubsection{Decisional Diffie-Hellman assumption}
+The assumption states that having \(g^{a}\) and \(g^{b}\), it is hard to compute \(g^{ab}\).
 
-\subsection{Diffie Hellman}
-\subsection{EKE}
+\subsection{Diffie-Hellman Key Exchange}
+The Diffie-Hellman key exchange method is named after Whitfield Diffie and Martin Hellman.
+The method allows two parties to establish a secret key without prior knowledge by using
+cyclic groups.
+
+First, two parties Alice and Bob agree on a modulus \(p\) and a generator
+\(g\). Both can be publicly known.
+
+Second, Alice generates a random integer \(a\), then sends Bob 
+
+\[A = g^a \% p\]
+
+while Bob also generates a random integer \(b\) and sends
+
+\[B = g^b \% p\]
+Now, now Alice computes
+
+\[g^{ab} = B^a \% p\]
+and Bob computes
+
+\[g^{ab} = A^b \% p\]
+
+Both never send their generated key \(a\) and \(b\) therefore it is very hard
+to compute \(g{ab}\) for an eavesdropper according to Decisional
+Diffie-Hellman assumption. 
+
+\subsection{EKE: Encrypted Key Exchange}
+The first PAKE protocol was introduced by Bellovin and Merrit called EKE
+\cite{bellovin1992encrypted}. In this section we are going to analyze how the
+protocol works. It allows two parties to securely authenticate and communicate
+to eachother over an insecure channel using a shared secret key namely a
+password.
+
+Let Alice and Bob be two parties communicating to eachother using the EKE
+protocol. Both share a common secret key, here \(s\) for secret. Often long
+before the protocols begins they agree on a modulus \(p\) and a generator
+\(g\). Alice starts by generating a random integer \(a\) and computes \(g^a \%
+p\) encrypted with the secret key \(s\). She then sends her id \(id_a\) in
+plain, and her encrypted key.
+
+\[id_a, s(g^a \% p)\]
+
+Bob recieves the message and also generates a random integer \(b\) and computes
+\(g^b \% p\) and encrypts it with the secret key \(s\). He then decrypts the
+message by Alice and computes the session key \(k\).
+
+\[g^{ab} \% p\]
+
+Bob, then generate what is called a "challenge" by Bellovin and Merrit, which serves
+to check the message are modified between the two parties. The challenge is encrypted
+with the computed session key \(k\) and send together with \(s(g^b \% b)\).
+
+\[s(g^b \% p), k(challenge_B)\]
+
+Next, Alice generates the session key \(k\) by decrypting \(s(g^b \% p)\) and computing
+
+\[g^{ab} \% p\]
+
+She then generates her own challenge, encrypts it together with Bobs' challenge
+and sends it to Bob. 
+
+\[k(challenge_A, challenge_B)\]
+
+Bob, then decrypts the message and checks, if \(challenge_B\) was changed during
+communication by an adversary. He sends \(challenge_A\) back to Alice.
+
+\[k(challenge_A)\]
+
+Alice verifies if \(challenge_A\) is still the same.
+
+Now, having a basic understanding of  the idea of PAKE protocol, more complex protocols
+using this idea can be explained.
+
 \subsection{PAPKE}
 
 \end{document}

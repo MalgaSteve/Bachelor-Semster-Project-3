@@ -48,6 +48,32 @@
       \field{pages}{145\bibrangedash 160}
       \range{pages}{16}
     \endentry
+    \entry{bellovin1992encrypted}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c925b549774fd5edfddaadf80dd929bf}{%
+           family={Bellovin},
+           familyi={B\bibinitperiod},
+           given={Steven\bibnamedelima Michael},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=383d1e96b3e58af8e51575dd801ef92a}{%
+           family={Merritt},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e713f16b99ba432c4d5eb71c00b879d7}
+      \strng{fullhash}{e713f16b99ba432c4d5eb71c00b879d7}
+      \strng{bibnamehash}{e713f16b99ba432c4d5eb71c00b879d7}
+      \strng{authorbibnamehash}{e713f16b99ba432c4d5eb71c00b879d7}
+      \strng{authornamehash}{e713f16b99ba432c4d5eb71c00b879d7}
+      \strng{authorfullhash}{e713f16b99ba432c4d5eb71c00b879d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Encrypted key exchange: Password-based protocols secure against dictionary attacks}
+      \field{year}{1992}
+    \endentry
     \entry{bellare2000authenticated}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=06e2bb2f83d8b669b46db64431509301}{%
@@ -75,8 +101,8 @@
       \strng{authorbibnamehash}{c05f79dce105554bb6067a1d7b055259}
       \strng{authornamehash}{c05f79dce105554bb6067a1d7b055259}
       \strng{authorfullhash}{c05f79dce105554bb6067a1d7b055259}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{International conference on the theory and applications of cryptographic techniques}
@@ -112,8 +138,8 @@
       \strng{authorbibnamehash}{6c64448dab63668b729d680b1b4029a4}
       \strng{authornamehash}{6c64448dab63668b729d680b1b4029a4}
       \strng{authorfullhash}{6c64448dab63668b729d680b1b4029a4}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in Cryptology—EUROCRYPT 2000: International Conference on the Theory and Application of Cryptographic Techniques Bruges, Belgium, May 14--18, 2000 Proceedings 19}
@@ -159,8 +185,8 @@
       \strng{authorbibnamehash}{fba07622a1e0a7fa27048dc64a8d7da9}
       \strng{authornamehash}{6f3b33c3c14cad1a49f8c608b60e5018}
       \strng{authorfullhash}{fba07622a1e0a7fa27048dc64a8d7da9}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in Cryptology--EUROCRYPT 2005: 24th Annual International Conference on the Theory and Applications of Cryptographic Techniques, Aarhus, Denmark, May 22-26, 2005. Proceedings 24}
@@ -211,8 +237,8 @@
       \strng{authorbibnamehash}{8e2d9d83a02c366dc92443d9a81aa75c}
       \strng{authornamehash}{d0364510a5b971c38fa871737169feb7}
       \strng{authorfullhash}{8e2d9d83a02c366dc92443d9a81aa75c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Applied Cryptography and Network Security: 17th International Conference, ACNS 2019, Bogota, Colombia, June 5--7, 2019, Proceedings 17}
@@ -235,8 +261,8 @@
       \strng{authorbibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
       \strng{authornamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
       \strng{authorfullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{SweetPAKE}
@@ -258,8 +284,8 @@
       \strng{authorbibnamehash}{dabef448fac48c6137ca1cfae1ffa156}
       \strng{authornamehash}{dabef448fac48c6137ca1cfae1ffa156}
       \strng{authorfullhash}{dabef448fac48c6137ca1cfae1ffa156}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/warner/python-spake2}}
@@ -268,8 +294,8 @@
       \field{year}{2016}
     \endentry
     \entry{passwd}{manual}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{month}{10}
       \field{title}{PASSWD(5) Linux User's Manual}
