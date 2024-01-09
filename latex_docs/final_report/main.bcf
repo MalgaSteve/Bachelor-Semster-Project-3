@@ -2377,6 +2377,7 @@
     <bcf:citekey order="10" intorder="1">passwd</bcf:citekey>
     <bcf:citekey order="11" intorder="1">shadow</bcf:citekey>
     <bcf:citekey order="12" intorder="1">bellovin1992encrypted</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">bradley2019password</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

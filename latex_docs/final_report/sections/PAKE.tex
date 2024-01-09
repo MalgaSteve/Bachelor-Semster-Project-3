@@ -3,21 +3,20 @@
 \begin{document}
 
 PAKE is an abbreviation for Password Authenticated Key Exchange, such protocols
-make it possible to have a secure communication using a weak shared secret key.
+make it possible to have secure communication using a weak shared secret key.
 As already mentioned in the introduction there are several PAKE protocols. In
-this section we are going first to look at some basic mandatory knowledge
+this section, we are going first to look at some basic mandatory knowledge
 needed to understand these protocols by explaining Cyclic Groups and the
 Diffie-Hellman protocol. After that we are going to look at two protocols in
 detail: EKE and PAPKE. EKE is a rather simpler PAKE protocol and PAPKE is an
-important protocol because in the following section the SweetPAKE protocol is
-build upon exactly this protocol.
+important protocol because, in the following section, the SweetPAKE protocol is built upon exactly this protocol.
 
 \subsection{Cyclic Groups}
-This subsection covers math base for the upcoming section.
+This subsection covers the math base for the upcoming section.
 
 \subsubsection{Group}
-A group \(g\) is structure that consists of a set of elements and an operation \(\cdot\)
-that satifies four propreties: 
+A group \(g\) is a structure that consists of a set of elements and an operation \(\cdot\)
+that satisfies four properties: 
 
 Closure: \[\forall g, h \in G,  g \cdot h \in G\]
 Identity element: \[\exists i \in G, \forall g \in G, i \cdot g = g =
@@ -54,7 +53,7 @@ Second, Alice generates a random integer \(a\), then sends Bob
 while Bob also generates a random integer \(b\) and sends
 
 \[B = g^b \% p\]
-Now, now Alice computes
+Now, Alice computes
 
 \[g^{ab} = B^a \% p\]
 and Bob computes
@@ -67,29 +66,29 @@ Diffie-Hellman assumption.
 
 \subsection{EKE: Encrypted Key Exchange}
 The first PAKE protocol was introduced by Bellovin and Merrit called EKE
-\cite{bellovin1992encrypted}. In this section we are going to analyze how the
+\cite{bellovin1992encrypted}. In this section, we are going to analyze how the
 protocol works. It allows two parties to securely authenticate and communicate
-to eachother over an insecure channel using a shared secret key namely a
+to each other over an insecure channel using a shared secret key namely a
 password.
 
-Let Alice and Bob be two parties communicating to eachother using the EKE
+Let Alice and Bob be two parties communicating with each other using the EKE
 protocol. Both share a common secret key, here \(s\) for secret. Often long
-before the protocols begins they agree on a modulus \(p\) and a generator
+before the protocols begin they agree on a modulus \(p\) and a generator
 \(g\). Alice starts by generating a random integer \(a\) and computes \(g^a \%
 p\) encrypted with the secret key \(s\). She then sends her id \(id_a\) in
 plain, and her encrypted key.
 
 \[id_a, s(g^a \% p)\]
 
-Bob recieves the message and also generates a random integer \(b\) and computes
+Bob receives the message and also generates a random integer \(b\) and computes
 \(g^b \% p\) and encrypts it with the secret key \(s\). He then decrypts the
 message by Alice and computes the session key \(k\).
 
 \[g^{ab} \% p\]
 
-Bob, then generate what is called a "challenge" by Bellovin and Merrit, which serves
-to check the message are modified between the two parties. The challenge is encrypted
-with the computed session key \(k\) and send together with \(s(g^b \% b)\).
+Bob, then generates what is called a "challenge" by Bellovin and Merrit, which serves
+to check the message is modified between the two parties. The challenge is encrypted
+with the computed session key \(k\) and sent together with \(s(g^b \% b)\).
 
 \[s(g^b \% p), k(challenge_B)\]
 
@@ -97,7 +96,7 @@ Next, Alice generates the session key \(k\) by decrypting \(s(g^b \% p)\) and co
 
 \[g^{ab} \% p\]
 
-She then generates her own challenge, encrypts it together with Bobs' challenge
+She then generates her challenge, encrypts it together with Bobs' challenge
 and sends it to Bob. 
 
 \[k(challenge_A, challenge_B)\]
@@ -113,5 +112,73 @@ Now, having a basic understanding of  the idea of PAKE protocol, more complex pr
 using this idea can be explained.
 
 \subsection{PAPKE}
+PAPKE is an abbreviation of Password-Authenticated Public-Key Encryption. It is
+introduced by Bradley, Camenisch, Jarecki, Lehmann, Neven and Xu with a thorough
+study \cite{bradley2019password}. It focuses on generating long-term keys. It
+tries to replace to currently often used method where a third party using
+certificates has to be trusted to provide a secure end-to-end encryption. The
+study also points out that PAPKE implies PAKE but not the other way around,
+this proves that PAPKE is an improved primitive. They also suggest two schemes
+PAPKE named PAPKE-IC and PAPKE-FO. In this analysis, PAPKE-FO is going to be
+looked at since it is the one that is implemented and used (see section
+Application).
 
+PAPKE-FO is a two-round PAKE protocol.
+
+Let Alice and Bob be two parties who want to generate long-term keys.
+Setup: Both parties agree on a group \(G\) of prime order p and two generators
+\(g_1\), \(g_2\). This protocol uses three hash functions, thus the setup
+consists of: 
+
+\begin{itemize}
+	\item password \(pwd\)
+	\item Group \(G\)
+	\item Generators \(g_1\) and \(g_2\)
+	\item \(H_0: \{0,1\}^* \to G\)
+	\item \(H_1: G^3 \times \{0,1\}^n \to \mathbb{Z}_p^2\)
+	\item \(H_2: G \to \{0,1\}^n\)
+\end{itemize}
+
+1. Alice does the following computations:
+Generates random integers in the range of \(G\) (The \(\gets{_R}\) stands for
+random assignment):
+\[x \gets{_R} \text{ } \mathbb{Z}_p\] 
+Generates two elements of \(G\) using both generators \(g_1\), \(g_2\) and \(x\).
+\[y_1 \gets \text{ } g_1^x\] 
+\[y_2 \gets \text{ } g_2^x\] 
+Then computes \(Y_2\):
+\[Y_2 \gets \text{ } y_2 \cdot H_0(pwd)\]
+The tuple \((y_1, Y_2)\) gives us the public key \(apk\):
+\[apk \gets \text{ } (y_1, Y_2)\]
+Alice stores the secret key \(sk\):
+\[sk \gets (x, y_1, y_2)\]
+Alice sends her \(id\) and the public key \(apk\) to Bob.
+
+2. Bob generates random long-term key \(k\):
+\[k \gets{_R} \text{ } \{0,1\}^*\] 
+After that Bob interprets the message \(apk = (y_1, Y_2)\) and computes: 
+\[y_2 \gets Y_2 \cdot H_0(pwd)^{-1}\]
+Then he gets a random element of \(G\) and computes 2 elements \(r_1\) and
+\(r_2\) using \(H_1\):
+\[R \gets{_R} G\]
+\[(r_1, r_2) \gets H_1(R, y_1, y_2, k)\]
+In the next step, he starts computing secrets. The first secret \(c_1\) using both
+generator and \(r_1\), \(r_2\). The second secret using \(y_1^{r_1}\),
+\(y_2^{r_2}\) and \(R\). The third secret by XORing the hash of \(R\) and \(k\)
+\[c_1 \gets g_1^{r_1} g_2^{r_2}\]
+\[c_2 \gets y_1^{r_1} y_2^{r_2} \cdot R\]
+\[c_3 \gets H_2(R) \oplus k\]
+\[c = (c_1, c_2, c_3)\]
+Bob then sends his \(id\) and the computed secrets \(c\).
+
+3. Alice interprets the inbound message  and computes \(R\), the long term k by
+xoring \(c_3\) with the hash of the computed \(R\). She also computes \(r_1\)
+and \(r_2\) to later confirm that nobody tried to imitate Bob.
+\[(r_1, r_2) \gets H_1(R, y_1, y_2, k)\]
+Alice then checks if an adversary tried to masquerade as Bob:
+\[\text{checks if } c_1 = g_1^{r_1} g_2^{r_2}\]
+
+It is a rather more complex protocol but uses the same mathematical principles as
+Diffie-Hellman and EKE protocol with additional steps to ensure to share
+long-term key that can be used for encrypting multiple messages.
 \end{document}

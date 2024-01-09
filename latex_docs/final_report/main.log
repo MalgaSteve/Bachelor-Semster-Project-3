@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2023.12.18)  9 JAN 2024 17:35
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2023.12.18)  9 JAN 2024 20:46
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -518,16 +518,79 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip75
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen171
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count423
+LaTeX Info: Redefining \frac on input line 236.
+\uproot@=\count424
+\leftroot@=\count425
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count426
+\DOTSCASE@=\count427
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen172
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count428
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count429
+\dotsspace@=\muskip21
+\c@parentequation=\count430
+\dspbrk@lvl=\count431
+\tag@help=\toks25
+\row@=\count432
+\column@=\count433
+\maxfields@=\count434
+\andhelp@=\toks26
+\eqnshift@=\dimen173
+\alignsep@=\dimen174
+\tagshift@=\dimen175
+\tagwidth@=\dimen176
+\totwidth@=\dimen177
+\lineht@=\dimen178
+\@envbody=\toks27
+\multlinegap=\skip76
+\multlinetaggap=\skip77
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
 (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks25
-\pgfutil@tempdima=\dimen171
-\pgfutil@tempdimb=\dimen172
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen179
+\pgfutil@tempdimb=\dimen180
 )
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box56
+\pgfutil@abb=\box58
 )
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -553,41 +616,41 @@ Package graphics Info: Driver file: luatex.def on input line 107.
 (/usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
 File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen173
-\Gin@req@width=\dimen174
+\Gin@req@height=\dimen181
+\Gin@req@width=\dimen182
 )
 (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks26
-\pgfkeys@temptoks=\toks27
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.te
 x
-\pgfkeys@tmptoks=\toks28
+\pgfkeys@tmptoks=\toks32
 ))
-\pgf@x=\dimen175
-\pgf@y=\dimen176
-\pgf@xa=\dimen177
-\pgf@ya=\dimen178
-\pgf@xb=\dimen179
-\pgf@yb=\dimen180
-\pgf@xc=\dimen181
-\pgf@yc=\dimen182
-\pgf@xd=\dimen183
-\pgf@yd=\dimen184
+\pgf@x=\dimen183
+\pgf@y=\dimen184
+\pgf@xa=\dimen185
+\pgf@ya=\dimen186
+\pgf@xb=\dimen187
+\pgf@yb=\dimen188
+\pgf@xc=\dimen189
+\pgf@yc=\dimen190
+\pgf@xd=\dimen191
+\pgf@yd=\dimen192
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count423
-\c@pgf@countb=\count424
-\c@pgf@countc=\count425
-\c@pgf@countd=\count426
-\t@pgf@toka=\toks29
-\t@pgf@tokb=\toks30
-\t@pgf@tokc=\toks31
-\pgf@sys@id@count=\count427
+\c@pgf@counta=\count435
+\c@pgf@countb=\count436
+\c@pgf@countc=\count437
+\c@pgf@countd=\count438
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
+\pgf@sys@id@count=\count439
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -601,8 +664,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count428
-\pgfsyssoftpath@bigbuffer@items=\count429
+\pgfsyssoftpath@smallbuffer@items=\count440
+\pgfsyssoftpath@bigbuffer@items=\count441
 )
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -632,12 +695,12 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen185
-\pgfmath@count=\count430
-\pgfmath@box=\box57
-\pgfmath@toks=\toks32
-\pgfmath@stack@operand=\toks33
-\pgfmath@stack@operation=\toks34
+\pgfmath@dimen=\dimen193
+\pgfmath@count=\count442
+\pgfmath@box=\box59
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
 )
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -651,52 +714,52 @@ x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
 .code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count431
+\c@pgfmathroundto@lastzeros=\count443
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen186
-\pgf@picmaxx=\dimen187
-\pgf@picminy=\dimen188
-\pgf@picmaxy=\dimen189
-\pgf@pathminx=\dimen190
-\pgf@pathmaxx=\dimen191
-\pgf@pathminy=\dimen192
-\pgf@pathmaxy=\dimen193
-\pgf@xx=\dimen194
-\pgf@xy=\dimen195
-\pgf@yx=\dimen196
-\pgf@yy=\dimen197
-\pgf@zx=\dimen198
-\pgf@zy=\dimen199
+\pgf@picminx=\dimen194
+\pgf@picmaxx=\dimen195
+\pgf@picminy=\dimen196
+\pgf@picmaxy=\dimen197
+\pgf@pathminx=\dimen198
+\pgf@pathmaxx=\dimen199
+\pgf@pathminy=\dimen256
+\pgf@pathmaxy=\dimen257
+\pgf@xx=\dimen258
+\pgf@xy=\dimen259
+\pgf@yx=\dimen260
+\pgf@yy=\dimen261
+\pgf@zx=\dimen262
+\pgf@zy=\dimen263
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen256
-\pgf@path@lasty=\dimen257
+\pgf@path@lastx=\dimen264
+\pgf@path@lasty=\dimen265
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen258
-\pgf@shorten@start@additional=\dimen259
+\pgf@shorten@end@additional=\dimen266
+\pgf@shorten@start@additional=\dimen267
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box58
-\pgf@hbox=\box59
-\pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count432
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count444
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen260
+\pgflinewidth=\dimen268
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
 ex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen261
-\pgf@pt@y=\dimen262
-\pgf@pt@temp=\dimen263
+\pgf@pt@x=\dimen269
+\pgf@pt@y=\dimen270
+\pgf@pt@temp=\dimen271
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -708,20 +771,20 @@ x
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen264
+\pgfarrowsep=\dimen272
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen265
-\pgf@sys@shading@range@num=\count433
-\pgf@shadingcount=\count434
+\pgf@max=\dimen273
+\pgf@sys@shading@range@num=\count445
+\pgf@shadingcount=\count446
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box61
+\pgfexternal@startupbox=\box63
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -736,15 +799,15 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box62
+\pgfnodeparttextbox=\box64
 )
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen266
-\pgf@nodesepend=\dimen267
+\pgf@nodesepstart=\dimen274
+\pgf@nodesepend=\dimen275
 )
 (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
@@ -756,10 +819,10 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen268
-\pgffor@skip=\dimen269
-\pgffor@stack=\toks35
-\pgffor@toks=\toks36
+\pgffor@iter=\dimen276
+\pgffor@skip=\dimen277
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
@@ -767,32 +830,32 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
 x
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count435
-\pgfplotmarksize=\dimen270
+\pgf@plot@mark@count=\count447
+\pgfplotmarksize=\dimen278
 )
-\tikz@lastx=\dimen271
-\tikz@lasty=\dimen272
-\tikz@lastxsaved=\dimen273
-\tikz@lastysaved=\dimen274
-\tikz@lastmovetox=\dimen275
-\tikz@lastmovetoy=\dimen276
-\tikzleveldistance=\dimen277
-\tikzsiblingdistance=\dimen278
-\tikz@figbox=\box63
-\tikz@figbox@bg=\box64
-\tikz@tempbox=\box65
-\tikz@tempbox@bg=\box66
-\tikztreelevel=\count436
-\tikznumberofchildren=\count437
-\tikznumberofcurrentchild=\count438
-\tikz@fig@count=\count439
+\tikz@lastx=\dimen279
+\tikz@lasty=\dimen280
+\tikz@lastxsaved=\dimen281
+\tikz@lastysaved=\dimen282
+\tikz@lastmovetox=\dimen283
+\tikz@lastmovetoy=\dimen284
+\tikzleveldistance=\dimen285
+\tikzsiblingdistance=\dimen286
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count448
+\tikznumberofchildren=\count449
+\tikznumberofcurrentchild=\count450
+\tikz@fig@count=\count451
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count440
-\pgfmatrixcurrentcolumn=\count441
-\pgf@matrix@numberofcolumns=\count442
+\pgfmatrixcurrentrow=\count452
+\pgfmatrixcurrentcolumn=\count453
+\pgf@matrix@numberofcolumns=\count454
 )
-\tikz@expandcount=\count443
+\tikz@expandcount=\count455
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
@@ -812,115 +875,115 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen279
+\arrowsize=\dimen287
 ))
-\@quotelevel=\count444
-\@quotereset=\count445
+\@quotelevel=\count456
+\@quotereset=\count457
 
 (./main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-3.
+4.
  (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 13.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/it' undefined
-(Font)              using `TU/ptm/bx/it' instead on input line 13.
+(Font)              using `TU/ptm/bx/it' instead on input line 14.
 
 -- Lines per column: 58 (exact).
 (/usr/share/texmf-dist/tex/latex/fmtcount/fc-english.def
@@ -941,22 +1004,22 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 13.
-Package biblatex Info: Reference segment=0 on input line 13.
+Package biblatex Info: Reference section=0 on input line 14.
+Package biblatex Info: Reference segment=0 on input line 14.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count446
-\scratchdimen=\dimen280
-\scratchbox=\box67
-\nofMPsegments=\count447
-\nofMParguments=\count448
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count449
-\MPscratchDim=\dimen281
-\MPnumerator=\count450
-\makeMPintoPDFobject=\count451
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count458
+\scratchdimen=\dimen288
+\scratchbox=\box69
+\nofMPsegments=\count459
+\nofMParguments=\count460
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count461
+\MPscratchDim=\dimen289
+\MPnumerator=\count462
+\makeMPintoPDFobject=\count463
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -966,26 +1029,26 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for TU+phv on input line 26
+LaTeX Font Info:    Trying to load font information for TU+phv on input line 27
 .
-LaTeX Font Info:    No file TUphv.fd. on input line 26.
+LaTeX Font Info:    No file TUphv.fd. on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/phv/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 26.
+(Font)              using `TU/lmr/m/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 26.
+(Font)              using `TU/ptm/bx/n' instead on input line 27.
 
-LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 26.
+LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 27.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -993,35 +1056,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 26.
+(Font)              using `TU/ptm/bx/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 26.
+(Font)              using `TU/ptm/bx/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 26.
+(Font)              using `TU/ptm/bx/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 26.
+(Font)              using `TU/ptm/bx/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 26.
+(Font)              using `TU/ptm/bx/n' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 28.
+(Font)              using `TU/ptm/bx/n' instead on input line 29.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 31.
+(Font)              using `TU/ptm/bx/n' instead on input line 32.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 34.
+(Font)              using `TU/ptm/bx/n' instead on input line 35.
 
 (./sections/introduction.tex
 
@@ -1035,7 +1098,7 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 )
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 37.
+(Font)              using `TU/ptm/bx/n' instead on input line 38.
 
 (./sections/honeywords.tex
 
@@ -1195,51 +1258,56 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 )
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 40.
+(Font)              using `TU/ptm/bx/n' instead on input line 41.
 
 (./sections/PAKE.tex
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 15.
+(Font)              using `TU/ptm/bx/n' instead on input line 14.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 19.
+(Font)              using `TU/ptm/bx/n' instead on input line 18.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 30.
+(Font)              using `TU/ptm/bx/n' instead on input line 29.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 33.
+(Font)              using `TU/ptm/bx/n' instead on input line 32.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 40.
+(Font)              using `TU/ptm/bx/n' instead on input line 39.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 42.
+(Font)              using `TU/ptm/bx/n' instead on input line 41.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 68.
+(Font)              using `TU/ptm/bx/n' instead on input line 67.
 
 [4]
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 115.
+(Font)              using `TU/ptm/bx/n' instead on input line 114.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--125
+[]\TU/ptm/bx/it/10.03749 PAPKE is an ab-bre-vi-a-tion of Password-
+ []
 
 )
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 43.
+(Font)              using `TU/ptm/bx/n' instead on input line 44.
 
 (./sections/sweetPAKE.tex)
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 46.
+(Font)              using `TU/ptm/bx/n' instead on input line 47.
 
 (./sections/application.tex
 
@@ -1253,25 +1321,25 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 )
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 49.
+(Font)              using `TU/ptm/bx/n' instead on input line 50.
 
 (./sections/conclusion.tex)
-
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 52.
-
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 53.
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 54--54
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 54.
+
+[5]
+Underfull \hbox (badness 2012) in paragraph at lines 55--55
 \TU/ptm/bx/it/10.03749 Con-fer-ence on the The-ory and Ap-pli-ca-tions
  []
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 55.
+(Font)              using `TU/ptm/bx/n' instead on input line 56.
 
 
 ** Conference Paper **
@@ -1284,7 +1352,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (./main.aux)
+[6
+
+] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1294,15 +1364,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 23954 strings out of 478285
+ 24647 strings out of 478285
  125007,1977958 words of node,token memory allocated
- 582 words of node memory still in use:
-   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 26 attribute, 65 glue_spec
-, 26 attribute_list, 2 write nodes
-   avail lists: 1:10,2:1577,3:651,4:52,5:744,6:94,7:12391,8:39,9:824,10:20,11:88
-9
- 43281 multiletter control sequences out of 65536+600000
- 90 fonts using 6229087 bytes
+ 719 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 44 attribute, 68 glue_spec
+, 44 attribute_list, 2 write nodes
+   avail lists: 1:3,2:1543,3:651,4:52,5:745,6:95,7:12391,8:39,9:820,10:18,11:889
+
+ 43938 multiletter control sequences out of 65536+600000
+ 91 fonts using 6360775 bytes
  100i,10n,98p,1128b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share
 /texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dis
@@ -1311,14 +1381,14 @@ ntype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/publi
 c/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b>
-Output written on main.pdf (5 pages, 110510 bytes).
+st/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (6 pages, 126922 bytes).
 
-PDF statistics: 86 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+PDF statistics: 93 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
