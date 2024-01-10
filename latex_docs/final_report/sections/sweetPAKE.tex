@@ -1,5 +1,86 @@
 \documentclass[../main.tex]{subfiles}
+\usetikzlibrary{positioning, arrows.meta}
+
+\documentclass[../main.tex]{subfiles}
+\usetikzlibrary{positioning, arrows.meta}
 
 \begin{document}
+Honeywords assumes the connection runs over servers using TLS, which has several
+problems including that the trust of a third party is needed. It is also more
+prone to phishing if the attacker succeeds in disguise as the server that
+distributes certificates or by tricking the user. To solve this problem,
+Skrobot and ... \cite{marjan2023} propose the SweetPAKE protocol, which
+combines the strength of a PAKE protocol and honeywords. First, they propose a
+naive approach using the SPAKE protocol however it is not efficient. They then
+propose a secure SweetPAKE protocol using PAPKE, they call it BeePAKE. 
+
+Note: The authors of SweetPAKE highly recommend using MAC authentication during
+the protocol but this report does not include MAC because it is out of the scope of
+this project and is not implemented in the technical part.
+
+\subsection{Setup} Let two parties be Alice and Bob, both share a secret key,
+here password \(pwd\). Let \(Gen\),  \(Enc\), and \(Dec\), be three functions
+of a secure PAPKE encryption scheme. Let \(PRF\) be a secure pseudo-random
+function which returns a vector of randomly generated long-term keys.
+
+\subsection{Process}
+\subsubsection{} Alice generates \((apk, sk)\) using the \(Gen\) function of
+PAPKE is explained in the section above.
+
+\[(apk, sk) \leftarrow Gen(pwd)\]
+
+She sends her \(id\) and \(apk\) to Bob.
+
+\subsubsection{} Bob generates a random key \(k\) that is used to generate a 
+vector of long-term keys \(K\).
+
+\[k \leftarrow {0,1}^*\]
+\[K = PRF(k, (id_a, apk))\]
+
+Bob then creates a vector \(C\) by generating secrets \(c\) using \(Enc\) for 
+every sugarword in the password file.
+
+\begin{algorithmic}
+  \For{\(i = 1, ..., n\)}
+	\[C[i] \leftarrow Enc(pwd, apk, K[i])\]
+  \EndFor
+\end{algorithmic}
+
+After that he does a random permutation \(RP\) of vector \(C\), meaning shuffles the
+vector, such that the position of the correct password remains unknown even for
+Alice. He then stores the mapping \(pmap\) of the permutation.
+
+\[(C', pmap) = RP(C)\]
+
+The vector \(C\) will then be sent to Alice together with Bobs' \(id\).
+
+\subsubsection{} Alice uses the \(Dec\) PAPKE function for every element in
+vector \(C\). If the function cannot decrypt a valid key the process is 
+aborted. After a successful decryption, Bob stores the position \(i\). 
+
+\begin{algorithmic}
+  \For{\(i = 1, ..., n\)}
+	\[k' \leftarrow Dec(sk, C'[i])\]
+  \EndFor
+  \If{\(k' = undefined\)}
+    abort
+  \EndIf
+\end{algorithmic}
+
+Alice computes the long-term session key and sends the index \(i\) to Bob. 
+
+\[tr \leftarrow (id_a, id_b, apk, C, i)\]
+\[key \leftarrow PRF(k', tr)\]
+
+\subsubsection{} Bob then computes with help of the stored mapping \(pmap\) the
+correct position of the password of the user and the key. 
+
+\[tr \leftarrow (id_c, id_b, apk, C, i)\]
+\[key \leftarrow PRF(K[i], tr)\]
+
+After the key computation, the server sends the honeychecker (explained in section
+Honeywords) the clients' user id and the position \(i\). The honeychecker then
+checks if \(i\) is the position of the correct password, if it is not the
+honeychecker alarms the system administrator.
 
 \end{document}

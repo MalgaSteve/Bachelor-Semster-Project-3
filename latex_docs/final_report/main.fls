@@ -310,6 +310,12 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.cod
 INPUT /usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex

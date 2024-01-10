@@ -119,12 +119,11 @@ tries to replace to currently often used method where a third party using
 certificates has to be trusted to provide a secure end-to-end encryption. The
 study also points out that PAPKE implies PAKE but not the other way around,
 this proves that PAPKE is an improved primitive. They also suggest two schemes
-PAPKE named PAPKE-IC and PAPKE-FO. In this analysis, PAPKE-FO is going to be
-looked at since it is the one that is implemented and used (see section
-Application).
+PAPKE named PAPKE-IC and PAPKE-FO. In this analysis, PAPKE-FO is a two-round
+PAKE protocol that is going to be looked at since it is the one that is
+implemented and used (see section Application). 
 
-PAPKE-FO is a two-round PAKE protocol.
-
+The scheme splitted into three functions \(Gen\), \(Enc\), and \(Dec\).
 Let Alice and Bob be two parties who want to generate long-term keys.
 Setup: Both parties agree on a group \(G\) of prime order p and two generators
 \(g_1\), \(g_2\). This protocol uses three hash functions, thus the setup
@@ -139,7 +138,7 @@ consists of:
 	\item \(H_2: G \to \{0,1\}^n\)
 \end{itemize}
 
-1. Alice does the following computations:
+\subsubsection{\(Gen\):} Alice does the following computations:
 Generates random integers in the range of \(G\) (The \(\gets{_R}\) stands for
 random assignment):
 \[x \gets{_R} \text{ } \mathbb{Z}_p\] 
@@ -154,7 +153,10 @@ Alice stores the secret key \(sk\):
 \[sk \gets (x, y_1, y_2)\]
 Alice sends her \(id\) and the public key \(apk\) to Bob.
 
-2. Bob generates random long-term key \(k\):
+The \(Gen\) function can be defined as follow:
+\[Gen(pwd) = (sk, apk)\] 
+
+\subsubsection{\(Enc\)} Bob generates random long-term key \(k\):
 \[k \gets{_R} \text{ } \{0,1\}^*\] 
 After that Bob interprets the message \(apk = (y_1, Y_2)\) and computes: 
 \[y_2 \gets Y_2 \cdot H_0(pwd)^{-1}\]
@@ -171,12 +173,19 @@ generator and \(r_1\), \(r_2\). The second secret using \(y_1^{r_1}\),
 \[c = (c_1, c_2, c_3)\]
 Bob then sends his \(id\) and the computed secrets \(c\).
 
-3. Alice interprets the inbound message  and computes \(R\), the long term k by
-xoring \(c_3\) with the hash of the computed \(R\). She also computes \(r_1\)
-and \(r_2\) to later confirm that nobody tried to imitate Bob.
+The \(Enc\) function can be defined as:
+\[Enc(pwd, apk) = c\]
+
+\subsubsection{\(Dec\)} Alice interprets the inbound message  and computes
+\(R\), the long term k by xoring \(c_3\) with the hash of the computed \(R\).
+She also computes \(r_1\) and \(r_2\) to later confirm that nobody tried to
+imitate Bob.
 \[(r_1, r_2) \gets H_1(R, y_1, y_2, k)\]
 Alice then checks if an adversary tried to masquerade as Bob:
 \[\text{checks if } c_1 = g_1^{r_1} g_2^{r_2}\]
+
+The \(Dec\) function can be defined as:
+\[Dec(pwd, c) = k\]
 
 It is a rather more complex protocol but uses the same mathematical principles as
 Diffie-Hellman and EKE protocol with additional steps to ensure to share
