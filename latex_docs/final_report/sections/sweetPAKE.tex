@@ -1,15 +1,12 @@
 \documentclass[../main.tex]{subfiles}
 \usetikzlibrary{positioning, arrows.meta}
 
-\documentclass[../main.tex]{subfiles}
-\usetikzlibrary{positioning, arrows.meta}
-
 \begin{document}
 Honeywords assumes the connection runs over servers using TLS, which has several
 problems including that the trust of a third party is needed. It is also more
 prone to phishing if the attacker succeeds in disguise as the server that
 distributes certificates or by tricking the user. To solve this problem,
-Skrobot and ... \cite{marjan2023} propose the SweetPAKE protocol, which
+Arriaga, Ryan, and Skrobot \cite{marjan2023} propose the SweetPAKE protocol, which
 combines the strength of a PAKE protocol and honeywords. First, they propose a
 naive approach using the SPAKE protocol however it is not efficient. They then
 propose a secure SweetPAKE protocol using PAPKE, they call it BeePAKE. 
