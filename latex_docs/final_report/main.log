@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2024.1.10)  10 JAN 2024 18:20
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2024.1.10)  11 JAN 2024 16:22
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1023,11 +1023,25 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = main.bcf
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Warner2013
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                warner2016
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 15.
 Package biblatex Info: Reference segment=0 on input line 15.
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count465
 \scratchdimen=\dimen288
@@ -1095,7 +1109,7 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 37.
 
 (./sections/introduction.tex
-Underfull \hbox (badness 1783) in paragraph at lines 35--41
+Underfull \hbox (badness 1783) in paragraph at lines 35--44
 []\TU/ptm/bx/it/10.03749 The pa-per Sweet-PAKE of Ar-riaga, Ryan and
  []
 
@@ -1254,11 +1268,12 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 223.
 
+[3]
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 229.
 
-[3])
+)
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 43.
@@ -1404,11 +1419,122 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (./sections/application.tex
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 5.
+(Font)              using `TU/ptm/bx/n' instead on input line 8.
+
+[6]
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 19.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 6.
+(Font)              using `TU/ptm/bx/n' instead on input line 31.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 58.
+
+
+LaTeX Warning: Citation 'warner2016' on page 7 undefined on input line 61.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 61.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 89.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 96.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 96.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 97.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 102.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 102.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 103.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 104.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 105.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 106.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 107.
+
+[7]
+Underfull \hbox (badness 2671) in paragraph at lines 137--139
+[]\TU/ptm/bx/it/10.03749 The ”file_op-er-a-tion” mod-ule con-tains func-tion
+
+ []
+
+
+LaTeX Warning: Citation 'Warner2013' on page 8 undefined on input line 142.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 142.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 149.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+[]\TU/ptm/bx/it/10.03749 Re-flec-tion-Thwarted(Sweet-PA-KEER-ROR) is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+[]\TU/ptm/bx/it/10.03749 On-ly-Call-Star-tOnce(Sweet-PA-KEER-ROR)
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 161--162
+\TU/ptm/bx/it/10.03749 is thrown when some-one send the wrong
+ []
+
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 185.
+
+
+Underfull \hbox (badness 1867) in paragraph at lines 187--189
+[]\TU/ptm/bx/it/10.03749 Be-gin-ning with the In-te-gerGroup class of the
+ []
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 225--227
+[]\TU/ptm/bx/it/10.03749 The data struc-ture which both classes Sweet-
+ []
+
+[8]
+
+LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
+(Font)              using `TU/ptm/bx/n' instead on input line 240.
 
 )
 
@@ -1424,7 +1550,7 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 57.
 
-[6]
+
 Underfull \hbox (badness 2012) in paragraph at lines 58--58
 \TU/ptm/bx/it/10.03749 Con-fer-ence on the The-ory and Ap-pli-ca-tions
  []
@@ -1440,7 +1566,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7
+[9
 
 ] (./main.aux)
 
@@ -1452,14 +1578,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 25151 strings out of 478285
+ 25155 strings out of 478285
  125007,1977958 words of node,token memory allocated
- 766 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 57 attribute, 67 glue_spec
-, 57 attribute_list, 2 write nodes
-   avail lists: 1:10,2:1555,3:653,4:52,5:773,6:95,7:13040,8:39,9:819,10:18,11:92
-8
- 44424 multiletter control sequences out of 65536+600000
+ 770 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 58 attribute, 67 glue_spec
+, 58 attribute_list, 2 write nodes
+   avail lists: 1:11,2:1518,3:651,4:114,5:819,6:97,7:13128,8:39,9:820,10:18,11:9
+49
+ 44428 multiletter control sequences out of 65536+600000
  91 fonts using 6360775 bytes
  100i,10n,98p,1128b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share
@@ -1473,10 +1599,10 @@ st/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (7 pages, 133229 bytes).
+Output written on main.pdf (9 pages, 144208 bytes).
 
-PDF statistics: 96 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+PDF statistics: 102 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

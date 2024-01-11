@@ -262,10 +262,10 @@ I3072 = IntegerGroup(
 class _Params:
     def __init__(self, group, M=b"M", N=b"N"):
         self.group = group
-        #self.M = group.arbitrary_element(seed=M)
-        #self.N = group.arbitrary_element(seed=N)
-        #self.M_str = M
-        #self.N_str = N
+        # self.M = group.arbitrary_element(seed=M)
+        # self.N = group.arbitrary_element(seed=N)
+        # self.M_str = M
+        # self.N_str = N
 
 
 # Params3072 has 128-bit security.

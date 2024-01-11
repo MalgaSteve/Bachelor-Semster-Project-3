@@ -309,7 +309,35 @@
       \field{title}{Shadow(5) Linux User's Manual}
       \field{year}{2023}
     \endentry
+    \entry{peterson2010}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e279698b01690ad5040bcc79b718a2ef}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{e279698b01690ad5040bcc79b718a2ef}
+      \strng{fullhash}{e279698b01690ad5040bcc79b718a2ef}
+      \strng{bibnamehash}{e279698b01690ad5040bcc79b718a2ef}
+      \strng{authorbibnamehash}{e279698b01690ad5040bcc79b718a2ef}
+      \strng{authornamehash}{e279698b01690ad5040bcc79b718a2ef}
+      \strng{authorfullhash}{e279698b01690ad5040bcc79b718a2ef}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/benjaminp/six}}
+      \field{journaltitle}{GitHub repository}
+      \field{title}{Utilities for writing code that runs on Python 2 and 3}
+      \field{year}{2010}
+    \endentry
   \enddatalist
+  \missing{Warner2013}
+  \missing{warner2016}
 \endrefsection
 \endinput
 

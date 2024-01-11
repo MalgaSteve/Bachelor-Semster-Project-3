@@ -91,10 +91,3 @@ def fisher_yates(arr):
     for i in range(1, len(arr)):
         j = random.randint(0, i)
         arr[j], arr[-i] = arr[-i], arr[j]
-
-
-append_user_to_file("Marie", "stenkt420")
-append_user_to_file("Steve", "stenkt420")
-append_user_to_file("Marjan", "stenkt420")
-append_user_to_file("Bob", "stenkt420")
-append_user_to_file("Alice", "stenkt420")

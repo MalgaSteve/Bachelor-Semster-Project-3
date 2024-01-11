@@ -2,7 +2,241 @@
 
 \begin{document}
 
-\subsection{Design}
+This section covers the technical part of this project. It consist of an
+implementation of a BeePAKE protocol \cite{marjan2023}. 
+
+\subsection{Requirements}
+The application should be an implementation of BeePAKE \cite{marjan2023} which
+has been discussed and analyzed in the previous section. The implementation
+should work on every operating system with Python version 2 or higher
+installed. The implementation will implement BeePAKE with the PAPKE-FO
+\cite{bradley2019password} protocol explained in previous sections. The project
+will include an example file that will show how the implementation can be used
+and tested. It will have two Parties and demonstrate how both share a key using
+the code provided.
+
+\subsubsection{Performance}
+Performance is important since the goal of BeePAKE is to provide people and 
+enterprises with the ability to have a secure-by-design protocol without being
+limited by poor performance. The process of sharing the key should not take more 
+than \(25\%\) time in seconds of \(k\) sugarwords. Let \(T\) be the acceptable time
+requirement. 
+
+\[T = 25\% \cdot k\]
+
+As an example, a client and a server having 20 sugarwords should not take more than
+5 seconds to share the session key.
+
+\subsubsection{Functional requirements} 
+The protocol will be split into four parts each representing one step of the
+protocol. Each part has its own function:
+
+\begin{itemize}
+	\item generate()
+	\item encryption()
+	\item decryption()
+	\item retrieve\_key()
+\end{itemize}
+
+The protocol also needs three functions of the encryption scheme of the PAPKE protocol:
+
+\begin{itemize}
+	\item papke\_generate()
+	\item papke\_encryption()
+	\item papke\_decryption()
+\end{itemize}
+
+The function generate() should use the following template:
+\begin{itemize}
+	\item Description: First step of the BeePAKE protocol
+	\item Parameter: No parameters
+	\item Pre-condition: Protocol was started
+	\item Post-condition: Generates a secret key, and a public key and returns the outbound message which will be sent
+	\item Trigger: A party requests key-sharing with a server
+\end{itemize}
+
+\subsection{Design} 
+The implementation uses Python, because it easy readable and has a lot of great
+cryptographic libraries. As basis for the project, modules of the github
+repository python-spake2 created by user warner \cite{warner2016} was used. The
+modules used are groups.py, six.py, util.py and spake.py, it is an
+implementation of the SPAKE2 protocol. 
+
+The implementation splits the BeePAKE protocol into four steps and two parties
+\(A\) and \(B\).
+
+First step: The first party \(A\) generates a secret key and public key using its'
+password. It then stores the secret key and sends the first message to the
+other party \(B\). The message includes the id of the party \(A\) sending it and the public
+key.
+
+Second step: The second party \(B\) recieves the messages, parses it to get the
+public key and the id of the other party \(A\). Then, he begins to generate the
+secrets, by encrypting a random generated session key for every sugarword using
+the encryption process of the PAPKE protocol. Party \(B\), then sends his id
+and the generated secrets.
+
+Third step: The first party \(A\) parses the recieved message and decrypts
+every key until a valid key is found. The resulted key is then stored and party
+\(A\) sends the index of the valdid key of the set of recieved keys including
+his id to party \(B\). 
+
+The last step: Party \(B\) parses the recieved message, retrieves the index and
+ask the honeychecker to check if it is a honeyword. He then stores the assiocated
+session key.
+
+\subsubsection{File structure} 
+The file structure is an imporant part in the project since modules refer other files and use
+other modules within the project. The main folder has two main directories, one example python
+file and one example password file.
+
+\begin{itemize}
+	\item honeyword\_generation (directory)
+	\begin{itemize}
+		\item gen.py (python file)
+		\item c\_pws (text file)
+	\end{itemize}
+
+	\item sweet\_pake (directory)
+	\begin{itemize}
+		\item file\_operation.py (python file)
+		\item groups.py (python file)
+		\item \_\_init\_\_.py (python file)
+		\item six.py (python file)
+		\item sweet\_pake.py (python file)
+		\item util.py (python file)
+	\end{itemize}
+	\item client\_sweetPake.py (python file)
+	\item pw\_file (text file)
+\end{itemize}
+
+The project is split into two main directories "honeyword\_generation" and
+"sweet\_pake". The "honeyword\_generation" folder includes a text file "c\_pws"
+having a fairly big list of the most common password and a python file "gen.py"
+which main purpose is to append or change a users' entry in a password file.
+The python file has multiple honeyword generation algorithms implemented that
+were proposed by Rivest and Juels \cite{juels2013honeywords}. Some of these
+algorithms use the mentioned text file "c\_pws". The directory
+"honeyword\_generation" is meant to be used to create an example password file
+to test the implementation of BeePake.
+
+The directory "sweet\_pake" is the heart of the project, the implementation of
+BeePAKE. It consist of 6 files, beginning with the file six.py which is a
+library written by Benjamin Peterson \cite{peterson2010}. The library makes it
+possible to make code of Python version 3, compatible for Python version 2
+without having to declutter code. 
+
+The "\_\_init\_\_.py", the file is used as package initializer, which means
+that the current directory "sweet\_pake" is treated as python package. Packages
+are treated like modules but the difference is that a module is one single file
+and a packages can contain several modules.
+
+The "util.py" file is a python file which consits of various utility function
+which are needed for other modules in the directory. 
+
+The "file\_operation" module contains function which are related to writing or
+reading file operations. 
+
+The "groups.py" file is the implementation of the math behind the protocol
+meaning implementation of cyclic groups and various hashing algorithms. The major
+part of this module was created by user warner of github \cite{Warner2013}.
+
+Finally, the "sweet\_pake.py" module consisting of the actual BeePAKE protocol.
+It implements the various functions and logic of the protocol using the modules
+mentionod above including libraries os, hashlib and hkdf from the standard library.
+
+\subsubsection{Classes}
+The different data classes:
+
+sweet\_pake.py: The module is mainly split into two classes and various
+Exception classes. Beginning with by presenting the error classes.
+\begin{itemize} 
+	\item SweetPAKEError(Exception) is used as abstract class every
+			SweetPAKE exception will derive from this one 
+	\item OffSides(SweetPAKEERROR) is triggered if the message came from
+		the same side as recieved
+	\item WongGroupError(SweetPAKEERROR) is triggered when a different or
+		invalid group is used
+	\item ReflectionThwarted(SweetPAKEERROR) is triggered when someone tries to reflect the message back to the user
+	\item OnlyCallStartOnce(SweetPAKEERROR) is thrown when someone send the wrong confirmation code
+\end{itemize}
+
+The two main classes represent both parties of a connection. The first class
+named SweetPAKE\_Client represents the client side and the second class name
+SweetPAKE\_Server represents the server side of the connection.
+
+\begin{itemize}
+	\item SweetPAKE\_Client
+	\item SweetPAKE\_Server
+\end{itemize}
+
+group.py: The module consits of a class named IntegerGroup and a private class
+named \_Element. The IntegerGroup class represents a cyclic group and the
+\_Element class represents an element of the group. The module of a third class
+named \_Params which purpose is to create a know big secure cyclic group.
+
+\begin{itemize}
+	\item IntegerGroup
+	\item \_Element
+	\item \_Params
+\end{itemize}
+
+\subsubsection{data structures}
+Now, the different data structures are presented.
+
+Beginning with the IntegerGroup class of the group.py module:
+\begin{itemize}
+	\item q being the order of the subgroup generated by the generators stored as whole number
+	\item p being the order of the group stored as whole number
+	\item Zero being the identity Element of the group stored as object of class \_Element 
+	\item Base1 and Base2 are two generators of the group
+		stored as object of the class \_Element
+\end{itemize}
+
+Now presenting the \_Element class:
+\begin{itemize}
+	\item \_group is the group the element is in stored as object of the
+		IntegerGroup class 
+        \item \_e is the value of the element can have
+		multiple types but is usually stored as whole integer number
+\end{itemize}
+
+\_Params class
+\begin{itemize}
+	\item group stored as object of the IntegerGroup class
+\end{itemize}
+
+Outside of classes as global variables:
+\begin{itemize}
+	\item I1024, I2048, I3072 are three objects of the IntegerGroup class
+	\item Params1024, Params2048, Params3072 are three object of the
+		\_Params class created with the three IntegerGroup object
+		showed above
+\end{itemize}
+
+Continuing with data structures of sweet\_pake module. Global variables:
+\begin{itemize}
+	\item ClientId and ServerId are the ids of both sides which is text
+	stored as byte object 
+  	\item DefaultParams is the IntegerGroup used from
+		both sides stored as object of the class \_Params
+\end{itemize}
+
+The data structure which both classes SweetPAKE\_Client and SweetPAKE\_Server have in common:
+\begin{itemize}
+	\item password is the shared password stored as byte object 
+	\item ida and idb being the ids of the sides which are communicating
+		with eachother stored as byte object
+	\item params is the integer group being used as object of the \_Params class
+	\item entropy\_f the entropy used and stored as byte object
+\end{itemize}
+
+The class SweetPAKE\_Server has one additional data\_structure:
+\begin{itemize} 
+ 	\item database which is an assiociative array with all passwords as
+			values and the usernames as values
+\end{itemize}
+
 \subsection{Implementation}
 
 \end{document}

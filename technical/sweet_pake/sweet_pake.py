@@ -1,6 +1,6 @@
-import os, json
-from binascii import hexlify, unhexlify
-from hashlib import sha256
+import os
+import json
+from binascii import hexlify
 import hashlib
 import hmac
 from hkdf import Hkdf
@@ -8,37 +8,24 @@ from .file_operations import get_dict_from_entries, fisher_yates
 from .groups import Params3072, _Params
 
 # Exceptions
-class SPAKEError(Exception):
+class SweetPAKEError(Exception):
     pass
 
 
-class OnlyCallStartOnce(SPAKEError):
-    """start() may only be called once. Re-using a SPAKE2 instance is likely
-    to reveal the password or the derived key."""
-
-class OnlyCallComputeOnce(SPAKEError):
-    """compute() may only be called once. Re-using a SPAKE2 instance is likely
-    to reveal the password or the derived key."""
-
-class OnlyCallFinishOnce(SPAKEError):
-    """finish() may only be called once. Re-using a SPAKE2 instance is likely
-    to reveal the password or the derived key."""
-
-
-class OffSides(SPAKEError):
+class OffSides(SweetPAKEError):
     """I received a message from someone on the same side that I'm on: I was
     expecting the opposite side."""
 
 
-class WrongGroupError(SPAKEError):
+class WrongGroupError(SweetPAKEError):
     pass
 
 
-class ReflectionThwarted(SPAKEError):
+class ReflectionThwarted(SweetPAKEError):
     """Someone tried to reflect our message back to us."""
 
-class IncorrectCode(SPAKEError):
-    """Someone sent wring confirmation code."""
+class IncorrectCode(SweetPAKEError):
+    """Someone sent wrong confirmation code."""
 
 
 ClientId = b"C"
@@ -59,7 +46,7 @@ DefaultParams = Params3072
 
 
 class SweetPAKE_Client:
-    "This class manages one side of a SPAKE2 key negotiation."
+    "This class manages one side of a SweetPAKE key negotiation."
 
     side = ClientId
 
@@ -87,10 +74,6 @@ class SweetPAKE_Client:
 
         self.params = params
         self.entropy_f = entropy_f
-
-        self._started = False
-        self._computed = False
-        self._finished = False
 
     def gen(self):
         #gen function
@@ -158,7 +141,7 @@ class SweetPAKE_Client:
         return session_key_computed
 
 
-    def _parse_array(self, message, size):
+    def _parse_array(self, message, size)
         arr = []
         length_cipher = len(message) // size
         for i in range(size):
@@ -184,7 +167,7 @@ class SweetPAKE_Client:
 
 
 class SweetPAKE_Server:
-    "This class manages one side of a SPAKE2 key negotiation."
+    "This class manages one side of a SweetPAKE key negotiation."
 
     side = ServerId
 
@@ -204,7 +187,6 @@ class SweetPAKE_Server:
     ):
 
         self.pw = password
-        
         self.idA = idA
         self.idB = idB
 
@@ -212,10 +194,6 @@ class SweetPAKE_Server:
         self.entropy_f = entropy_f
 
         self.database = get_dict_from_entries("./pw_file")
-
-        self._started = False
-        self._computed = False
-        self._finished = False
 
     def enc(self, inbound_message):
         #parse inbound_messahe
