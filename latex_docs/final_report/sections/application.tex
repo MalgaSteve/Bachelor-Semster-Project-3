@@ -2,7 +2,7 @@
 
 \begin{document}
 
-This section covers the technical part of this project. It consist of an
+This section covers the technical part of this project. It consists of an
 implementation of a BeePAKE protocol \cite{marjan2023}. 
 
 \subsection{Requirements}
@@ -56,9 +56,9 @@ The function generate() should use the following template:
 \end{itemize}
 
 \subsection{Design} 
-The implementation uses Python, because it easy readable and has a lot of great
-cryptographic libraries. As basis for the project, modules of the github
-repository python-spake2 created by user warner \cite{warner2016} was used. The
+The implementation uses Python because it is easily readable and has a lot of great
+cryptographic libraries. As a basis for the project, modules of the GitHub
+repository python-spake2 created by user warner \cite{warner2016} were used. The
 modules used are groups.py, six.py, util.py and spake.py, it is an
 implementation of the SPAKE2 protocol. 
 
@@ -70,24 +70,24 @@ password. It then stores the secret key and sends the first message to the
 other party \(B\). The message includes the id of the party \(A\) sending it and the public
 key.
 
-Second step: The second party \(B\) recieves the messages, parses it to get the
+Second step: The second party \(B\) receives the messages, and parses them to get the
 public key and the id of the other party \(A\). Then, he begins to generate the
-secrets, by encrypting a random generated session key for every sugarword using
+secrets, by encrypting a randomly generated session key for every sugarword using
 the encryption process of the PAPKE protocol. Party \(B\), then sends his id
 and the generated secrets.
 
-Third step: The first party \(A\) parses the recieved message and decrypts
-every key until a valid key is found. The resulted key is then stored and party
-\(A\) sends the index of the valdid key of the set of recieved keys including
+Third step: The first party \(A\) parses the received message and decrypts
+every key until a valid key is found. The resulting key is then stored and the party
+\(A\) sends the index of the valid key of the set of received keys including
 his id to party \(B\). 
 
-The last step: Party \(B\) parses the recieved message, retrieves the index and
-ask the honeychecker to check if it is a honeyword. He then stores the assiocated
+The last step: Party \(B\) parses the received message, retrieves the index and
+asks the honeychecker to check if it is a honeyword. He then stores the associated
 session key.
 
 \subsubsection{File structure} 
-The file structure is an imporant part in the project since modules refer other files and use
-other modules within the project. The main folder has two main directories, one example python
+The file structure is an important part of the project since modules refer to other files and use
+other modules within the project. The main folder has two main directories, one example Python
 file and one example password file.
 
 \begin{itemize}
@@ -112,38 +112,38 @@ file and one example password file.
 
 The project is split into two main directories "honeyword\_generation" and
 "sweet\_pake". The "honeyword\_generation" folder includes a text file "c\_pws"
-having a fairly big list of the most common password and a python file "gen.py"
-which main purpose is to append or change a users' entry in a password file.
-The python file has multiple honeyword generation algorithms implemented that
+having a fairly big list of the most common passwords and a Python file "gen.py"
+whose main purpose is to append or change a users' entry in a password file.
+The Python file has multiple honeyword generation algorithms implemented that
 were proposed by Rivest and Juels \cite{juels2013honeywords}. Some of these
 algorithms use the mentioned text file "c\_pws". The directory
 "honeyword\_generation" is meant to be used to create an example password file
 to test the implementation of BeePake.
 
 The directory "sweet\_pake" is the heart of the project, the implementation of
-BeePAKE. It consist of 6 files, beginning with the file six.py which is a
+BeePAKE. It consists of 6 files, beginning with the file six.py which is a
 library written by Benjamin Peterson \cite{peterson2010}. The library makes it
-possible to make code of Python version 3, compatible for Python version 2
+possible to make code of Python version 3, compatible with Python version 2
 without having to declutter code. 
 
-The "\_\_init\_\_.py", the file is used as package initializer, which means
-that the current directory "sweet\_pake" is treated as python package. Packages
+The "\_\_init\_\_.py" file is used as a package initializer, which means
+that the current directory "sweet\_pake" is treated as a Python package. Packages
 are treated like modules but the difference is that a module is one single file
-and a packages can contain several modules.
+and packages can contain several modules.
 
-The "util.py" file is a python file which consits of various utility function
+The "util.py" file is a Python file which consists of various utility function
 which are needed for other modules in the directory. 
 
-The "file\_operation" module contains function which are related to writing or
+The "file\_operation" module contains functions which are related to writing or
 reading file operations. 
 
 The "groups.py" file is the implementation of the math behind the protocol
-meaning implementation of cyclic groups and various hashing algorithms. The major
-part of this module was created by user warner of github \cite{Warner2013}.
+meaning the implementation of cyclic groups and various hashing algorithms. The major
+part of this module was created by user warner of Git Hub \cite{Warner2013}.
 
-Finally, the "sweet\_pake.py" module consisting of the actual BeePAKE protocol.
+Finally, the "sweet\_pake.py" module consists of the actual BeePAKE protocol.
 It implements the various functions and logic of the protocol using the modules
-mentionod above including libraries os, hashlib and hkdf from the standard library.
+mentioned above including libraries os, hashlib and hkdf from the standard library.
 
 \subsubsection{Classes}
 The different data classes:
@@ -151,14 +151,14 @@ The different data classes:
 sweet\_pake.py: The module is mainly split into two classes and various
 Exception classes. Beginning with by presenting the error classes.
 \begin{itemize} 
-	\item SweetPAKEError(Exception) is used as abstract class every
+	\item SweetPAKEError(Exception) is used as an abstract class every
 			SweetPAKE exception will derive from this one 
-	\item OffSides(SweetPAKEERROR) is triggered if the message came from
-		the same side as recieved
+	\item OffSides(SweetPAKEERROR) is triggered if the message comes from
+		the same side as received
 	\item WongGroupError(SweetPAKEERROR) is triggered when a different or
-		invalid group is used
+		the invalid group is used
 	\item ReflectionThwarted(SweetPAKEERROR) is triggered when someone tries to reflect the message back to the user
-	\item OnlyCallStartOnce(SweetPAKEERROR) is thrown when someone send the wrong confirmation code
+	\item OnlyCallStartOnce(SweetPAKEERROR) is thrown when someone sends the wrong confirmation code
 \end{itemize}
 
 The two main classes represent both parties of a connection. The first class
@@ -170,10 +170,10 @@ SweetPAKE\_Server represents the server side of the connection.
 	\item SweetPAKE\_Server
 \end{itemize}
 
-group.py: The module consits of a class named IntegerGroup and a private class
+group.py: The module consists of a class named IntegerGroup and a private class
 named \_Element. The IntegerGroup class represents a cyclic group and the
 \_Element class represents an element of the group. The module of a third class
-named \_Params which purpose is to create a know big secure cyclic group.
+named \_Params whose purpose is to create a know big secure cyclic group.
 
 \begin{itemize}
 	\item IntegerGroup
@@ -186,24 +186,24 @@ Now, the different data structures are presented.
 
 Beginning with the IntegerGroup class of the group.py module:
 \begin{itemize}
-	\item q being the order of the subgroup generated by the generators stored as whole number
-	\item p being the order of the group stored as whole number
-	\item Zero being the identity Element of the group stored as object of class \_Element 
+	\item q being the order of the subgroup generated by the generators stored as a whole number
+	\item p being the order of the group stored as a whole number
+	\item Zero being the identity Element of the group stored as an object of class \_Element 
 	\item Base1 and Base2 are two generators of the group
-		stored as object of the class \_Element
+		stored as an object of the class \_Element
 \end{itemize}
 
 Now presenting the \_Element class:
 \begin{itemize}
-	\item \_group is the group the element is in stored as object of the
+	\item \_group is the group the element is in stored as an object of the
 		IntegerGroup class 
         \item \_e is the value of the element can have
-		multiple types but is usually stored as whole integer number
+		multiple types but is usually stored as a whole integer number
 \end{itemize}
 
 \_Params class
 \begin{itemize}
-	\item group stored as object of the IntegerGroup class
+	\item group stored as an object of the IntegerGroup class
 \end{itemize}
 
 Outside of classes as global variables:
@@ -216,27 +216,442 @@ Outside of classes as global variables:
 
 Continuing with data structures of sweet\_pake module. Global variables:
 \begin{itemize}
-	\item ClientId and ServerId are the ids of both sides which is text
-	stored as byte object 
+	\item ClientId and ServerId are the ids of both sides which are text
+	stored as a byte object 
   	\item DefaultParams is the IntegerGroup used from
-		both sides stored as object of the class \_Params
+		both sides are stored as objects of the class \_Params
 \end{itemize}
 
 The data structure which both classes SweetPAKE\_Client and SweetPAKE\_Server have in common:
 \begin{itemize}
-	\item password is the shared password stored as byte object 
+	\item password is the shared password stored as a byte object 
 	\item ida and idb being the ids of the sides which are communicating
-		with eachother stored as byte object
-	\item params is the integer group being used as object of the \_Params class
+		with each other stored as byte object
+	\item params is the integer group being used as the object of the \_Params class
 	\item entropy\_f the entropy used and stored as byte object
 \end{itemize}
 
 The class SweetPAKE\_Server has one additional data\_structure:
 \begin{itemize} 
- 	\item database which is an assiociative array with all passwords as
+ 	\item database which is an associative array with all passwords as
 			values and the usernames as values
 \end{itemize}
 
 \subsection{Implementation}
 
+The section will present the most important parts of the implementation.
+Beginning with the gen.py module from the honeyword generation module. 
+
+Line 5-42 is a honeyword generation method proposed by the authors of
+Honeywords \cite{juels2013honeywords}. The chaffing-by-digits method 
+takes the password and creates a new password by replacing the digits with other
+random digits. The function takes the password p and the number of sugarwords k
+as parameters. First, an array named positions, an index i and an array
+of sugarwords are created. Then, it traverses every character of the string p, if a
+traversed character is a digit, its' position is appended to the array
+positions. Then the next for loop is traversed k times, at every traversal the
+password p is added and then every digit is replaced by a random digit. The complexity
+of this method is quadratic. \(O(n^2)\).
+
+\begin{lstlisting}[language=Python]
+def gen_chaff_digits(p, k):
+    positions = []
+    i = 0
+
+    sugarwords = []
+
+    for c in p:
+        if c.isdigit():
+            positions.append(i)
+        i += 1
+
+    sys_random = random.SystemRandom()
+    for n in range(k):
+        sugarwords.append(p)
+        for x in positions:
+            rand = sys_random.randint(0, 9)
+            sugarwords[n] = sugarwords[n][:x] 
+	    	   + str(rand) 
+		   + sugarwords[n][x+1:]
+
+    sugarwords.append(p)
+    return sugarwords
+\end{lstlisting}
+
+Lines 27-48 implement the chaffing-by-model method explained in the honeywords
+section. It uses a large database of the most common pattern in passwords
+consisting of letters. The algorithm identifies the sequences of characters in the
+password that only consists of letters and then replaces them with a random word
+from the large database. To retrieve a random word from the large database it uses
+the get\_rnd\_pw\_word() function. The algorithm below has a linear complexity
+\(O(n)\).
+
+\begin{lstlisting}[language=Python]
+def gen_by_model(p, k):
+    sugarwords = []
+
+    word_index = 0
+    words = []
+    for i in range(len(p)):
+        if p[i].isdigit():
+            if i != 0 and not p[i-1].isdigit():
+                word_index += 1
+        else:
+            if i == 0 or p[i-1].isdigit():
+                words.append(p[i])
+            else:
+                words[word_index] += (p[i])
+
+    for n in range(k):
+        x = p
+        for word in words:
+            x = x.replace(word, 
+	    	get_rnd_pw_word())
+        sugarwords.append(x)
+
+    return sugarwords
+\end{lstlisting}
+
+Lines 51-59, return a random word from the large database which is stored in c\_pws.
+
+\begin{lstlisting}[language=Python]
+def get_rnd_pw_word():
+    words = []
+    rnd = 0
+    sys_random = random.SystemRandom()
+    with open("c_pws") as f:
+        words = f.readlines()
+        rnd = sys_random.randint(0, len(words)-1)
+
+    return words[rnd][0:-1]
+\end{lstlisting}
+
+At lines 84 to 87, the function is given an array of sugarwords and it encrypts every element
+using a scrypt hash from the library hashlib. The sugarwords in the array are replaced with
+the encrypted words. The complexity of this function is linear \(O(n)\).
+
+\begin{lstlisting}[language=Python]
+def encrypt_pws(arr):
+    for i in range(len(arr)):
+        dk = hashlib.scrypt(bytes(arr[i], 'utf-8'), salt=b"NaCl", n=16384, r=8, p=16)
+        arr[i] = dk.hex()
+\end{lstlisting}
+
+In lines 90-93, the Fisher-Yates algorithm is implemented. It takes an array and shuffles it, such
+that each sugarword has a random position. The algorithm is useable for cryptographic usage and
+has linear complexity \(O(n)\).
+
+\begin{lstlisting}[language=Python]
+def fisher_yates(arr):
+    for i in range(1, len(arr)):
+        j = random.randint(0, i)
+        arr[j], arr[-i] = arr[-i], arr[j]
+\end{lstlisting}
+
+The function at lines 62-81 takes a username and a password as input. The function generates
+the first 3 honeywords using chaffing-by-model and then for every generated honeyword it uses
+chaffing-by-digit. The resulting array of sugarwords is then shuffled using the Fisher-Yates
+algorithm and then encrypted. The username together with the sugarwords are then written
+in the password file. The complexity is quadratic \(O(n)\).
+
+\begin{lstlisting}[language=Python]
+def append_user_to_file(name, pw):
+    k = 3
+    sugarwords = gen_by_model(pw, k)
+    for i in range(len(sugarwords)):
+        sugarwords += 
+	   gen_chaff_digits(sugarwords[i], 
+	   			k)
+
+    fisher_yates(sugarwords)
+    pw_index = 
+        random.randint(0, len(sugarwords) 
+		- 1)
+    sugarwords[pw_index] = pw
+    encrypt_pws(sugarwords)
+
+    with open("pw_file", 'a') as file:
+        file.write(name + ":")
+
+        for words in sugarwords:
+            file.write(word)
+            if not word == sugarwords[-1]:
+                file.write(":")
+
+        file.write("\n")
+\end{lstlisting}
+
+Now, the sweet\_pake package is presented, by first showing some functions of
+the group.py module.
+
+As you can see in the constructor at lines 104-118. The IntegerGroup has two generators which 
+is necessary for the BeePAKE protocol. In lines 117 and 118, it is double-checked that the
+two generators are elements of the group.
+
+\begin{lstlisting}[language=Python]
+    def __init__(self, p, q, g1, g2):
+        self.q = q  
+        self.p = p 
+        self.Zero = _Element(self, 1)
+        self.Base1 = _Element(self, g1)
+        self.Base2 = _Element(self, g2)
+
+        self.exponent_size_bytes = 
+		size_bytes(self.q)
+        self.element_size_bits = 
+		size_bits(self.p)
+        self.element_size_bytes = 
+		size_bytes(self.p)
+
+        assert pow(g1, self.q, self.p)
+		== 1
+        assert pow(g2, self.q, self.p) 
+		== 1
+\end{lstlisting}
+
+At lines 204-219 is the operation of the group implemented being a
+multiplication. It always makes sure that no other type is calculated except an
+element object type, if it does not raise an error in such cases, this would be
+a vulnerability that could be exploited.
+
+\begin{lstlisting}[language=Python]
+    def _exp(self, e1, i):
+        if not isinstance(e1, _Element):
+            raise 
+	    TypeError("E^i requires E be an element")
+        assert e1._group is self
+        if not isinstance(i, integer_types):
+            raise 
+	    TypeError("E^i requires i be an integer")
+        return _Element(self, pow(e1._e, i % self.q, self.p))
+
+    def _elementmult(self, e1, e2):
+        if not isinstance(e1, _Element):
+            raise 
+	    TypeError("E1*E2 requires E1 be an element")
+        assert e1._group is self
+        if not isinstance(e2, _Element):
+            raise 
+	    TypeError("E1*E2 requires E2 be an element")
+        assert e2._group is self
+        return _Element(self, (e1._e * e2._e) % self.p)
+\end{lstlisting}
+
+The function at lines 172-174 does a xoring between two byte sequences.
+
+\begin{lstlisting}[language=Python]
+def xor(self, bytes1, bytes2):
+        xor = [a ^ b for a, b in zip(bytes1, bytes2)]
+        return bytes(xor)
+\end{lstlisting}
+
+The function at lines 38-50 takes as several parameters and hashes to compute two
+exponent which will be used for the protocol.
+
+\begin{lstlisting}[language=Python]
+def key_to_2exponents(R, y1, y2, k, exponent_size_bytes, q):
+    ikm = R.to_bytes() + y1.to_bytes() + y2.to_bytes() + k
+    h = Hkdf(salt=b"", input_key_material=ikm, hash=hashlib.sha256)
+    info = b"SweetPAKE FO random exponents"
+    seed_rs = h.expand(info, 2 * exponent_size_bytes + 32)
+
+    (r1_bytes, r2_bytes) = splitInHalf(seed_rs)
+    r1_number = bytes_to_number(r1_bytes)
+    r2_number = bytes_to_number(r2_bytes)
+    r1_exponent = r1_number % q
+    r2_exponent = r2_number % q
+    
+    return (r1_exponent, r2_exponent)
+\end{lstlisting}
+
+The function at lines 65-75 returns a vector of random session keys for each
+entry in the password file.
+
+\begin{lstlisting}[language=Python]
+def secrets_to_array_of_keys(k, y1, Y2, n, length_bytes):
+    ikm = y1.to_bytes() + Y2.to_bytes() + k
+    h = Hkdf(salt=b"", input_key_material=ikm, hash=hashlib.sha256)
+    info = b"SweetPAKE vector of keys"
+    length_seed_rs = length_bytes
+    seed_rs = h.expand(info, n*length_seed_rs)
+
+    length_key = len(seed_rs) // n
+    keys = []
+    for index in range(n):
+        keys.append(seed_rs[index*n:index*n+length_key])
+
+    return keys
+\end{lstlisting}
+
+Now continuing with the sweet\_pake module. Looking at the client side at lines 78-93,
+the function generates the secret key and the public key and stores the secret
+key. After that, it creates a variable named outbound\_message which includes
+the id of the side, the size of the username, the username and the public key.
+
+\begin{lstlisting}[language=Python]
+    def gen(self):
+        #gen function
+        group = self.params.group
+        self.random_exponent = group.random_exponent(self.entropy_f)
+        self.y1_elem = group.Base1.exp(self.random_exponent)
+        self.y2_elem = group.Base2.exp(self.random_exponent)
+        Y2_elem = self.y2_elem.elementmult(group.password_to_hash(self.pw))
+
+        #self.outbound_message = (self.y1+self.Y2) <-- apk
+        y1_bytes = self.y1_elem.to_bytes()
+        Y2_bytes = Y2_elem.to_bytes()
+        self.outbound_message =  y1_bytes + Y2_bytes
+
+        username_size = len(self.username).to_bytes()
+
+        outbound_id_and_message = self.side + username_size + self.username + self.outbound_message
+
+        return outbound_id_and_message
+\end{lstlisting}
+
+The server side reacts to the outbound message with the function at lines 198-232. The
+function parses first the message extracts the username and the apk. He then generates 
+a vector of session keys using the secrets\_to\_array function. Then encrypts every
+sugarword using the encryption method used in PAPKE FO \cite{bradley2019password} explained
+in the PAPKE section. The implementation of the method is at lines 234-252 it produces several
+secrets which are then included in an outbound message variable together with the servers' id and
+the byte size of one secret.
+
+\begin{lstlisting}[language=Python]
+def enc(self, inbound_message):
+        #parse inbound_messahe
+        self.inbound_message = self._extract_message(inbound_message)
+
+        #get username from message
+        username_size = int.from_bytes(self.inbound_message[:1])
+        self.working_with = self.inbound_message[1:username_size+1].decode('utf-8')
+
+        self.inbound_message = self.inbound_message[username_size+1:]
+
+        apk = self.parse_apk(self.inbound_message)
+        group = self.params.group
+        y1_elem = group.bytes_to_element(apk[0])
+        Y2_elem = group.bytes_to_element(apk[1])
+        client_pw_array = self.database[self.working_with]
+
+        #PRF - get array of keys
+        k = os.urandom(32)
+        self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array), 32)
+        #self.arr_K = []
+        self.ciphers = []
+
+        #enc_function
+        for i in range(len(client_pw_array)):
+            gen_ciphers = self._papke_enc(group, y1_elem, Y2_elem, client_pw_array[i], self.arr_K[i])
+            self.ciphers.append(gen_ciphers)
+        
+        #shuffle cipher array
+        rp_ciphers, self.pmap = fisher_yates(self.ciphers)
+
+        #message
+        #self.outbound_message = c = (c1, c2, c3)
+        self.outbound_message = b"".join(rp_ciphers)
+        outbound_sid_and_message = self.side + len(rp_ciphers).to_bytes() + self.outbound_message
+        return outbound_sid_and_message
+
+def _papke_enc(self, group, y1_elem, Y2_elem, pw, session_key):
+        #session_key = os.urandom(32)
+        #self.arr_K.append(session_key)
+
+        pw_to_hash = group.password_to_hash(bytes.fromhex(pw))
+        y2_elem = Y2_elem.elementmult((pw_to_hash.exp(-1)))
+
+        random_exponent = group.random_exponent(self.entropy_f)
+        R_elem = group.Base1.exp(random_exponent)
+
+        (r1, r2) = group.secrets_to_hash(R_elem, y1_elem, y2_elem, session_key)
+
+        c1 = group.Base1.exp(r1).elementmult(group.Base2.exp(r2))
+        c2 = y1_elem.exp(r1).elementmult(y2_elem.exp(r2)).elementmult(R_elem)
+        c3 = group.xor(hashlib.sha256(R_elem.to_bytes()).digest(), session_key)
+
+        C = c1.to_bytes() + c2.to_bytes() + c3
+
+        return C
+\end{lstlisting}
+
+At lines 97-126 is the decrypt function it first parses the message and then tries to
+decrypt every secret using the decrypt function of the PAPKE protocol at lines 128-148. 
+If the is decrypted successfully it stores the decrypted key and returns a message including
+the id and the index of the successfully decrypted key.
+
+\begin{lstlisting}[language=Python]
+    def dec(self, inbound_message):
+        #parse message
+        group = self.params.group
+        self.inbound_message = self._extract_message(inbound_message)
+
+        len_ciphers = int.from_bytes(self.inbound_message[:1])
+        if len_ciphers < 0:
+            raise ValueError("Invalid size")
+
+        self.inbound_message = self.inbound_message[1:]
+        ciphers = self._parse_array(self.inbound_message, len_ciphers)
+        index = -1
+
+        #dec
+        for i in range(len(ciphers)):
+            session_key_computed = self._papke_dec(group, ciphers[i])
+            
+            #checks if decryption is successful
+            if session_key_computed != -1:
+                index = i
+                break
+
+        if index == -1:
+            raise ValueError("Could not decrypt")
+
+        self.session_key = session_key_computed
+
+        self.second_outbound_message = i.to_bytes()
+
+        return self.side + self.second_outbound_message
+
+    def _papke_dec(self, group, cipher_tuple):
+        (c1, c2, c3) = self._parse_key(cipher_tuple)
+        c1 = group.bytes_to_element(c1)
+        c2 = group.bytes_to_element(c2)
+
+        #computation
+        R_elem = c2.elementmult(c1.exp(-self.random_exponent))
+        session_key_computed = group.xor(c3, hashlib.sha256(R_elem.to_bytes()).digest())
+        (r1, r2) = group.secrets_to_hash(R_elem, self.y1_elem, self.y2_elem, session_key_computed)
+
+        if c1.to_bytes() != group.Base1.exp(r1).elementmult(group.Base2.exp(r2)).to_bytes():
+            return -1
+
+        return session_key_computed
+\end{lstlisting}
+
+After that, the server retrieves the key using the function at lines 258-264.
+
+\begin{lstlisting}[language=Python]
+    def retrieve_key_ask_honeychecker(self, inbound_message):
+        self.second_inbound_message = self._extract_message(inbound_message)
+        index = int.from_bytes(self.second_inbound_message)
+        original_index = self.pmap[index]
+        self.session_key = self.arr_K[original_index]
+
+        # todo verify honeychecker
+
+        return self.session_key
+\end{lstlisting}
+
+\subsection{Improvements}
+The implementation is 90\% finished but it still can be improved. 
+List of improvements:
+\begin{itemize}
+	\item Integration of honeychecker
+	\item Improved benchmark system
+	\item Unit tests
+	\item Improved comments
+	\item Refractor according to one style guide
+	\item Include MAC authentication
+	\item Improve Error Handling
+\end{itemize}
 \end{document}
