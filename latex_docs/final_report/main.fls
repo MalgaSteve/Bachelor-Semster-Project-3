@@ -1,4 +1,4 @@
-PWD /home/malga/Documents/semester3/Bachelor-Semester-Project-3/latex_docs/final_report
+PWD /home/malga/Documents/Bachelor-Semester-Project-3/latex_docs/final_report
 INPUT /var/lib/texmf/web2c/luahbtex/lualatex.fmt
 INPUT ./main.tex
 OUTPUT main.log

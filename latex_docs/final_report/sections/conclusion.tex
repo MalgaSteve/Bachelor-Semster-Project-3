@@ -2,4 +2,31 @@
 
 \begin{document}
 
+In conclusion, the report delves into the challenges of traditional username
+and password authentication methods and explores alternative approaches to
+improve security. The report analyzes concepts of honeywords proposed by Rivest
+and Juels \cite{juels2013honeywords}, which incorporates decoy passwords in the
+password file to detect data breaches. It also discusses Password Authenticated
+Key Exchange protocols, specifically focusing on the PAPKE protocol proposed by
+Bradley, Tatiana and Camenisch, Jan and Jarecki, Stanislaw and Lehmann, Anja
+and Neven, Gregory and Xu, Jiayu \cite{bradley2019password}.
+
+The SweetPAKE protocol, proposed by Arriage, Ryan, and Skrobot, combines the
+strengths of both worlds PAKE protocols and honeywords to address the
+challenges faced in authentication. The authors present BeePAKE as a secure
+variant of SweetPAPKE using the PAPKE protocol.
+
+How to detect if a password file is in possession of intruders and at the same
+Does time prevent phishing attacks?
+
+Combining the strength of honeywords and PAKE, the SweetPAKE protocol is a
+promising answer. By implementing a secure variant of SweetPAKE, here BeePAKE,
+the report demonstrates a practical application that enhances security in
+password-based authentication. The protocol provides a way to detect intruders
+through honeywords and also ensures secure communication using long-term keys
+generated from weak passwords using PAKE protocols. By using a PAKE protocol,
+one must not trust a third party being a server that distributes certificates,
+as a consequence, an attacker can't masquerade as such thus preventing phishing
+attacks.
+
 \end{document}
