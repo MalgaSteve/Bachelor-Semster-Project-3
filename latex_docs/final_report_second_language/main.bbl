@@ -1,0 +1,130 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{juels2013honeywords}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=c865ec9228baea73d3d6c2c3faa7bcc7}{%
+           family={Juels},
+           familyi={J\bibinitperiod},
+           given={Ari},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{fullhash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{bibnamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authorbibnamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authornamehash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \strng{authorfullhash}{b8c452716a6ff8c93c294f0eec5b31af}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2013 ACM SIGSAC conference on Computer \& communications security}
+      \field{title}{Honeywords: Making password-cracking detectable}
+      \field{year}{2013}
+      \field{pages}{145\bibrangedash 160}
+      \range{pages}{16}
+    \endentry
+    \entry{marjan2023}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=f5c2dc41ddf08fa635153339a7fc80d0}{%
+           family={Skrobot},
+           familyi={S\bibinitperiod},
+           given={Marjan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{fullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{bibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authorbibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authornamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authorfullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SweetPAKE}
+      \field{title}{SweetPAKE: Key exchange with decoy passwords}
+      \field{year}{2023}
+    \endentry
+    \entry{bradley2019password}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=73c8ca367858ee2e5585e57138de945d}{%
+           family={Bradley},
+           familyi={B\bibinitperiod},
+           given={Tatiana},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7ee2bdf724d3560932a81321ec74f23f}{%
+           family={Camenisch},
+           familyi={C\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=28abbd2c4efcd4c8ee864ae8e7a002e9}{%
+           family={Jarecki},
+           familyi={J\bibinitperiod},
+           given={Stanislaw},
+           giveni={S\bibinitperiod}}}%
+        {{hash=586b1924d576086f65c68d45b1268724}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Anja},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4ce119fc14821a47944904ada0bda23f}{%
+           family={Neven},
+           familyi={N\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2202df79a8553afc4c258e66012f606b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Jiayu},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d0364510a5b971c38fa871737169feb7}
+      \strng{fullhash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \strng{bibnamehash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \strng{authorbibnamehash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \strng{authornamehash}{d0364510a5b971c38fa871737169feb7}
+      \strng{authorfullhash}{8e2d9d83a02c366dc92443d9a81aa75c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Applied Cryptography and Network Security: 17th International Conference, ACNS 2019, Bogota, Colombia, June 5--7, 2019, Proceedings 17}
+      \field{title}{Password-authenticated public-key encryption}
+      \field{year}{2019}
+      \field{pages}{442\bibrangedash 462}
+      \range{pages}{21}
+    \endentry
+  \enddatalist
+  \missing{bradley2019passwords}
+  \missing{marjan 2023}
+\endrefsection
+\endinput
+

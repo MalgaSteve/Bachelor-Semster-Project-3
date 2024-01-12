@@ -1,0 +1,304 @@
+\documentclass[conference, compsoc]{IEEEtran}
+\usepackage{datetime}
+\usepackage[style=ieee]{biblatex}
+\usepackage{subfiles}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{algpseudocode}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\addbibresource{biblio.bib}
+
+\begin{document}
+
+\title{PAKE protocols und Decoy passwords\\
+{\small \today~-~\currenttime}}
+
+\author{
+    \IEEEauthorblockA{Steve Meireles Lopes\\
+    University of Luxembourg\\
+    Email: steve.meireles.001@student.uni.lu}\\
+    This report has been produced under the supervision of:\\
+    \IEEEauthorblockA{Marjan Skrobot\\
+    University of Luxembourg\\
+    Email: marjan.skrobot@uni.lu}}
+
+\maketitle
+
+\begin{abstract}
+Das Bericht antwortet auf die Frage: Wie erkennt man, ob eine Kennwort-Datei im
+	Besitz von Eindringlingen ist und kann man gleichzeitig
+	Phishing-Angriffe verhindern?  Dies wird beantwortet mit SweetPAKE, das
+	die Stärken von PAKE Protokolle und Honeywords kombiniert. Es stellt
+	auch eine Implementierung eines SweetPAKE vor.
+\end{abstract}
+
+
+\section{}
+Seit der Erfindung von Rechner, wird die Benutzername und Passwort
+Authentifizierungs Methode am häufigsten benutzt. Mittlerweile, weiss man dass
+Menschen sehr schlecht im erfinden und merken von komplexen Passwörten die man
+nicht vorhersagen kann. Es gibt etliche Methode diese Schwachstelle auszunutzen
+wie zum Beispiel die "Offline Dictionary" Attacke oder einfach das tausendfache
+probieren eines Passworts. In den letzen Jahre gab es auch Veröffentlichung von
+Millionen von Passwörter, weil Kennwort-Datei von Firmen an falschen Hände
+geraten. Ein weiteres Authentifikations Problem im Netz is das abhängige
+Vertrauen an Drittanbietern die Zertifikate austeilen. 
+
+Dieses Bericht widmet sich der Frage: Wie erkennt man, ob eine Kennwort-Datei
+im Besitz von Eindringlingen ist und kann man gleichzeitig Phishing-Angriffe
+verhindern? 
+
+\section{Honeywords}
+Honeywords ist eine Methode das von Rivest und Juels empfohlen
+wurde\cite{juels2013honeywords}. Die Methode besteht darin mehrere "falsche
+"Passwörter zu haben, die sich als richtiges Passwort tarnen, die nennt man
+Honeywords. Diese Honeywords werden dann zusammen mit dem richtigen Passwort in
+der Kennwort-Datei gespeichert. Die Position wird dann einer seperaten System
+names Honeychecker gespeichert. Der Honeychecker checkt bei jedem Anmelde
+Versuch ob der Benutzer ein getarnten Passwort eingeben, wenn ja nimmt
+dementsprechende Massnahmen wie zum Beispiel dem Administrator zu alamieren. 
+Die Autoren von Honeywords empfehlen auch mehrere Algorithmen um die Honeywords
+zu generieren, sie achten drauf, dass die Honeywords nicht zu differenzieren ist
+mit dem richtigen Passwort sodass ein ausenstehender nicht wissen kann was das
+richtige Passwort ist.
+
+\section{PAKE protocols}
+PAKE Protokolle sind Protokolle die es ermöglichen eine sichere Kommunikation
+herzustellen,obwohl man schwache Passwörter benutzt. Solche Protokolle benutzen
+zyklische Gruppen wie auch das Diffie-Hellman Prinzip.
+
+Die Autoren von PAPKE \cite{bradley2019passwords}, und Bradley, Tatiana und
+Camenisch, Jan und Jarecki, Stanislaw und Lehmann, Anja und Neven, Gregory und
+Xu, Jiayu, empfehlen zum Beispiel solch einen Protokoll. Jedoch fügen sie noch
+eine Primitive hinzu und zwar fokussieren sich mit dem generieren von Lang-Zeit
+Schlüsseln die eine sichere End-zu-End Verschlüsselung garantieren. Sie
+empfehlen zwei Schemas die das PAPKE Protokoll befolge, das PAPKE-IC und das
+PAPKE-FO.
+
+\section{SweetPAKE}
+SweetPAKE empfohlen von Arriage, Ryan und Skrobot, kombiniert die Stärken
+von Honeywords und PAKE Protokolle. Die Autoren von SweetPAKE empfehlen
+eine Naive Variante und eine sichere Variante. Die sichere Variante namens 
+BeePAKE benutzt als Basis, das PAPKE protokoll.
+
+Schritte:
+
+Lass Alice und Bob zwei Parteien sein die ein Schlüssel teilen wollen.
+
+1. Alice generiert ein öffentlicher Schlüssel und ein privater mit Hilfe von
+ihrem Passwort. Sie schickt das öffentliche Schlüssel zu Bob.
+
+2. Bob erstellt dann ein Schlüssel für jedes Kennwort in der Kennwort-Datei
+mit Hilfe vom öffentlichen Schlüsseln. Dieses Liste von Schlüsseln wird dann an
+Alice geschickt.
+
+3. Alice entschlüsselt alle Inhalte von der List bis sie ein gültigen Schlüssel
+bekommt und speichert die Position. Sie schickt dann die Position weiter an Bob.
+
+4. Bob schickt nun die Position an den Honeychecker, der checkt ob ein Honeyword oder
+das richtege Passwort bentutz wurde.
+
+\section{Application}
+Diesen Abschnitt beeinhaltet den technischen Teil des Projektes. Es besteht aus der 
+Implentierung des BeePAKE Protokolls \cite{marjan 2023}.
+
+Die Anwendung sollte eine Implementierung von BeePAKE \cite{marjan2023} sein,
+die in dem vorherigen Abschnitt diskutiert und analysiert wurde. Die
+Implementierung sollte auf jedem Betriebssystem funktionieren. Es sollte mit
+der Python Version 2 oder höher laufen. Das BeePAKE-Protokoll wird mit dem
+PAPKE-FO \cite{bradley2019password} Protokoll implementiert, das in vorherigen
+Abschnitten erläutert wurde. Das Projekt wird eine Beispieldatei enthalten, die
+zeigt, wie die Implementierung verwendet und getestet werden kann. Es wird zwei
+Parteien haben und zeigen, wie beide einen Schlüssel teilen, indem sie den
+bereitgestellten Code verwenden.
+
+Das Protokoll wird in vier Teile unterteilt, von denen jeder einen Schritt des
+Protokolls darstellt. Jeder Teil hat seine eigene Funktion:
+
+\begin{itemize}
+	\item generate(): Erster Schritt des BeePAKE-Protokolls
+	\item encryption(): Verschlüsselungsschritt
+	\item decryption(): Entschlüsselungsschritt
+	\item retrieve\_key(): Schlüsselabrufschritt
+\end{itemize}
+
+Das Protokoll benötigt auch drei Funktionen des Verschlüsselungsschemas des PAPKE-Protokolls:
+\begin{itemize}
+	\item papke\_generate()
+	\item papke\_encryption()
+	\item papke\_decryption()
+\end{itemize}
+
+
+Die Funktion generate() sollte die folgende Vorlage verwenden:
+\begin{itemize}
+
+\item Beschreibung: Erster Schritt des BeePAKE-Protokolls
+\item Parameter: Keine Parameter
+\item Vorbedingung: Das Protokoll wurde gestartet
+\item Nachbedingung: Generiert einen geheimen Schlüssel und einen öffentlichen
+	Schlüssel und gibt die ausgehende Nachricht zurück, die gesendet wird
+\item Auslöser: Eine Partei fordert den Schlüsselaustausch mit einem Server an
+\end{itemize}
+
+Die folgende gezeigte Funktion gen() ist der erst Schritt des BeePAKE Protokoll
+es generiert eine öffentlichen Schlüssel und eine privaten und speichert dies.
+
+\begin{lstlisting}[language=Python]
+def gen(self):
+        #gen function
+        group = self.params.group
+        self.rundom_exponent = group.rundom_exponent(self.entropy_f)
+        self.y1_elem = group.Base1.exp(self.rundom_exponent)
+        self.y2_elem = group.Base2.exp(self.rundom_exponent)
+        Y2_elem = self.y2_elem.elementmult(group.password_to_hash(self.pw))
+
+        #self.outbound_message = (self.y1+self.Y2) <-- apk
+        y1_bytes = self.y1_elem.to_bytes()
+        Y2_bytes = Y2_elem.to_bytes()
+        self.outbound_message =  y1_bytes + Y2_bytes
+
+        username_size = len(self.username).to_bytes()
+
+        outbound_id_und_message = self.side + username_size + self.username + self.outbound_message
+
+        return outbound_id_und_message
+\end{lstlisting}
+
+Die Funktion enc() entschlüsselt jedes Passwort in der Datei mit Hilfe von der
+Nachrichter von der zweiten Partei und sendet die nötigen Information zu
+underen Partei.
+
+\begin{lstlisting}[language=Python]
+def enc(self, inbound_message):
+        #parse inbound_messahe
+        self.inbound_message = self._extract_message(inbound_message)
+
+        #get username from message
+        username_size = int.from_bytes(self.inbound_message[:1])
+        self.working_with = self.inbound_message[1:username_size+1].decode('utf-8')
+
+        self.inbound_message = self.inbound_message[username_size+1:]
+
+        apk = self.parse_apk(self.inbound_message)
+        group = self.params.group
+        y1_elem = group.bytes_to_element(apk[0])
+        Y2_elem = group.bytes_to_element(apk[1])
+        client_pw_array = self.database[self.working_with]
+
+        #PRF - get array of keys
+        k = os.urundom(32)
+        self.arr_K = group.secrets_to_array(k, y1_elem, Y2_elem, len(client_pw_array), 32)
+        #self.arr_K = []
+        self.ciphers = []
+
+        #enc_function
+        for i in range(len(client_pw_array)):
+            gen_ciphers = self._papke_enc(group, y1_elem, Y2_elem, client_pw_array[i], self.arr_K[i])
+            self.ciphers.append(gen_ciphers)
+        
+        #shuffle cipher array
+        rp_ciphers, self.pmap = fisher_yates(self.ciphers)
+
+        #message
+        #self.outbound_message = c = (c1, c2, c3)
+        self.outbound_message = b"".join(rp_ciphers)
+        outbound_sid_und_message = self.side + len(rp_ciphers).to_bytes() + self.outbound_message
+        return outbound_sid_und_message
+\end{lstlisting}
+
+Dec() nimmt eine Nachricht an und entschlüsselt die Liste von Schlüsseln bis sie eine gültige
+raus bekommt. Schlussendlich sendet sie die Position zur underen Partei.
+
+\begin{lstlisting}[language=Python]
+def dec(self, inbound_message):
+        #parse message
+        group = self.params.group
+        self.inbound_message = self._extract_message(inbound_message)
+
+        len_ciphers = int.from_bytes(self.inbound_message[:1])
+        if len_ciphers < 0:
+            raise ValueError("Invalid size")
+
+        self.inbound_message = self.inbound_message[1:]
+        ciphers = self._parse_array(self.inbound_message, len_ciphers)
+        index = -1
+
+        #dec
+        for i in range(len(ciphers)):
+            session_key_computed = self._papke_dec(group, ciphers[i])
+            
+            #checks if decryption is successful
+            if session_key_computed != -1:
+                index = i
+                break
+
+        if index == -1:
+            raise ValueError("Could not decrypt")
+
+        self.session_key = session_key_computed
+
+        self.second_outbound_message = i.to_bytes()
+
+        return self.side + self.second_outbound_message
+
+\end{lstlisting}
+
+Die nächst gezeigte Funktion entnimmt aus der Nachricht und nimmt die nötigen Schritten
+um das Schlüssel zu bekommen.
+
+\begin{lstlisting}[language=Python]
+def retrieve_key_ask_honeychecker(self, inbound_message):
+        self.second_inbound_message = self._extract_message(inbound_message)
+        index = int.from_bytes(self.second_inbound_message)
+        original_index = self.pmap[index]
+        self.session_key = self.arr_K[original_index]
+
+        # todo verify honeychecker
+
+        return self.session_key
+\end{lstlisting}
+
+\section{Conclusion}
+Als Schlussfolgerung kann man sage, dass SweetPake eine gute Antwort auf die
+Frage; Dieses Bericht widmet sich der Frage: Wie erkennt man, ob eine
+Kennwort-Datei im Besitz von Eindringlingen ist und kann man gleichzeitig
+Phishing-Angriffe verhindern? ist.
+
+Mit Hilfe der Implementierung kann man dies auch austesten und möglicherweise
+Benchmarks ausführen.
+
+\printbibliography
+
+\end{document}

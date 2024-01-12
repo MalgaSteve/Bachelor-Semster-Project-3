@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[56] biber:340> INFO - === Fri Jan 12, 2024, 14:51:31
+[67] Biber.pm:419> INFO - Reading 'main.bcf'
+[115] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
+[127] Biber.pm:4419> INFO - Processing section 0
+[134] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[135] bibtex.pm:1713> INFO - LaTeX decoding ...
+[141] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
+[176] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[176] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[176] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[176] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[178] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[179] bbl.pm:763> INFO - Output to main.bbl
+[179] Biber.pm:131> WARN - I didn't find a database entry for 'bradley2019passwords' (section 0)
+[179] Biber.pm:131> WARN - I didn't find a database entry for 'marjan 2023' (section 0)
+[179] Biber.pm:133> INFO - WARNINGS: 2
