@@ -41,7 +41,7 @@
 
 \begin{document}
 
-\title{PAKE protocols und Decoy passwords\\
+\title{PAKE Protokolle und Täuschungs Kennwörter\\
 {\small \today~-~\currenttime}}
 
 \author{
@@ -64,7 +64,7 @@ Das Bericht antwortet auf die Frage: Wie erkennt man, ob eine Kennwort-Datei im
 \end{abstract}
 
 
-\section{}
+\section{Einleitung}
 Seit der Erfindung von Rechner, wird die Benutzername und Passwort
 Authentifizierungs Methode am häufigsten benutzt. Mittlerweile, weiss man dass
 Menschen sehr schlecht im erfinden und merken von komplexen Passwörten die man
@@ -93,7 +93,7 @@ zu generieren, sie achten drauf, dass die Honeywords nicht zu differenzieren ist
 mit dem richtigen Passwort sodass ein ausenstehender nicht wissen kann was das
 richtige Passwort ist.
 
-\section{PAKE protocols}
+\section{PAKE Protokolle}
 PAKE Protokolle sind Protokolle die es ermöglichen eine sichere Kommunikation
 herzustellen,obwohl man schwache Passwörter benutzt. Solche Protokolle benutzen
 zyklische Gruppen wie auch das Diffie-Hellman Prinzip.
@@ -129,7 +129,7 @@ bekommt und speichert die Position. Sie schickt dann die Position weiter an Bob.
 4. Bob schickt nun die Position an den Honeychecker, der checkt ob ein Honeyword oder
 das richtege Passwort bentutz wurde.
 
-\section{Application}
+\section{Technische Arbeit}
 Diesen Abschnitt beeinhaltet den technischen Teil des Projektes. Es besteht aus der 
 Implentierung des BeePAKE Protokolls \cite{marjan 2023}.
 
@@ -290,7 +290,7 @@ def retrieve_key_ask_honeychecker(self, inbound_message):
         return self.session_key
 \end{lstlisting}
 
-\section{Conclusion}
+\section{Schlussfolgerung}
 Als Schlussfolgerung kann man sage, dass SweetPake eine gute Antwort auf die
 Frage; Dieses Bericht widmet sich der Frage: Wie erkennt man, ob eine
 Kennwort-Datei im Besitz von Eindringlingen ist und kann man gleichzeitig
