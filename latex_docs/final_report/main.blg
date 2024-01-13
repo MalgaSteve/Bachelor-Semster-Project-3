@@ -1,21 +1,21 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[62] biber:340> INFO - === Fri Jan 12, 2024, 11:14:51
-[75] Biber.pm:419> INFO - Reading 'main.bcf'
-[124] Biber.pm:979> INFO - Found 13 citekeys in bib section 0
-[136] Biber.pm:4419> INFO - Processing section 0
-[144] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[145] bibtex.pm:1713> INFO - LaTeX decoding ...
-[151] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
-[214] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[214] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[214] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[214] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[218] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[221] bbl.pm:763> INFO - Output to main.bbl
-[221] Biber.pm:131> WARN - legacy month field 'Octobre' in entry 'passwd' is not an integer - this will probably not sort properly.
-[221] Biber.pm:131> WARN - legacy month field 'Octobre' in entry 'shadow' is not an integer - this will probably not sort properly.
-[221] Biber.pm:131> WARN - Possible typo (case mismatch) between citation and datasource keys: 'warner2016' and 'Warner2016' in file 'biblio.bib'
-[221] Biber.pm:131> WARN - I didn't find a database entry for 'warner2016' (section 0)
-[221] Biber.pm:131> WARN - I didn't find a database entry for 'Warner2013' (section 0)
-[221] Biber.pm:133> INFO - WARNINGS: 5
+[75] biber:340> INFO - === Sat Jan 13, 2024, 12:11:48
+[89] Biber.pm:419> INFO - Reading 'main.bcf'
+[155] Biber.pm:979> INFO - Found 13 citekeys in bib section 0
+[171] Biber.pm:4419> INFO - Processing section 0
+[180] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[181] bibtex.pm:1713> INFO - LaTeX decoding ...
+[190] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
+[269] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[269] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[269] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[269] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[275] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[278] bbl.pm:763> INFO - Output to main.bbl
+[278] Biber.pm:131> WARN - legacy month field 'Octobre' in entry 'passwd' is not an integer - this will probably not sort properly.
+[279] Biber.pm:131> WARN - legacy month field 'Octobre' in entry 'shadow' is not an integer - this will probably not sort properly.
+[279] Biber.pm:131> WARN - Possible typo (case mismatch) between citation and datasource keys: 'warner2016' and 'Warner2016' in file 'biblio.bib'
+[279] Biber.pm:131> WARN - I didn't find a database entry for 'warner2016' (section 0)
+[279] Biber.pm:131> WARN - I didn't find a database entry for 'Warner2013' (section 0)
+[279] Biber.pm:133> INFO - WARNINGS: 5

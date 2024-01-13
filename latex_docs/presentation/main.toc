@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{The scientific question}{3}{0}{1}
+\beamer@sectionintoc {2}{References}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Password File}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Honeychecker}{6}{0}{2}
+\beamer@sectionintoc {3}{PAPKE}{8}{0}{3}
+\beamer@sectionintoc {4}{SweetPAKE}{10}{0}{4}
+\beamer@sectionintoc {5}{Application}{12}{0}{5}
+\beamer@subsectionintoc {5}{1}{Requirements}{12}{0}{5}
+\beamer@subsectionintoc {5}{2}{Design}{14}{0}{5}
+\beamer@subsectionintoc {5}{3}{Production}{16}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{18}{0}{6}
