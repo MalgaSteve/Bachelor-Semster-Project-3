@@ -1,0 +1,278 @@
+\documentclass[9pt]{beamer}
+\usetheme{CambridgeUS}
+\usecolortheme{seahorse}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title[VPN and TOR]{BSP: VPN and Tor the comparision}
+\author[Steve Meireles]{Student: Steve Meireles \and Tutor: Marjan Skrobot}
+\date{2024}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+\frametitle{Requirements: scientific question}
+\section{Scientific Deliverable}
+\subsection{Requirements} 
+What are the technical features, security and privacy considerations,
+and user experience of VPN compared to Tor?
+\end{frame}
+
+\begin{frame}
+\frametitle{Design: References}
+\subsection{Design}
+\begin{itemize}
+	\item "Tor: The second-generation onion router", by Dingledine, Roger
+		and Mathewson. Nick and Syverson, Paul 	
+	\item "Mastering OpenVPN", by Crist, Eric F and Keijser, Jan Just
+	\item "OpenVPN Cookbook", by Keijser, Jan Just
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Production: What is VPN?}
+\subsection{Production}
+\textbf{V}irtual 
+	\begin{itemize}
+	\item it is simulated
+	\item does not exist in the phyiscal world
+	\end{itemize}
+\textbf{P}rivate 
+	\begin{itemize}
+	\item only accessable by a group or a person
+	\end{itemize}
+\textbf{N}etwork
+	\begin{itemize}
+	\item collection of interconnected system that communicate with eachother
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Production: VPN Technical Features}
+Firewall
+	\begin{itemize}
+	\item analyses ports
+	\item can deny traffic into the network
+	\item keep everybody out except VPN traffic
+	\item every protocol should use it
+	\end{itemize}
+Authentication
+	\begin{itemize}
+	\item ensures that the parties are what they pretend to be
+	\item at the beginning of a session or random during the session
+	\item a lot of methods (User/password, PKI, certificate-based)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Production: VPN User Experience}
+Performance
+\begin{itemize}
+\item slower than normal connection
+\item depends on encryption algorithm
+\item depends on authentication method
+\end{itemize}
+Ease of setup
+\begin{itemize}
+ \item depends on protocol
+ \item OpenVPN is more difficult
+ \item Companies that provide VPNs
+\end{itemize}
+Reliability
+\begin{itemize}
+\item depends on protcol
+\item openVPN it depends on the user
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Production: What is Tor?}
+	\begin{itemize}
+	\item open-source project with a big community
+	\item nodes host by volunteers
+	\end{itemize}
+	Core idea: At every node a new layer of encryption is added.
+
+	OP: Onion Proxy <- software that handles circuits
+\end{frame}
+
+\begin{frame}
+\frametitle{Production: How is a connection constructed?}
+\begin{itemize}
+\item OP chooses several random nodes at beginning
+\item Each node agrees on ciphers they use
+\item They generate session-keys using Diffie-Hellman
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Production: Tor user experience}
+Performance
+\begin{itemize}
+\item very slow
+\end{itemize}
+
+Ease of setup
+\begin{itemize}
+ \item very easy to install and configure
+\end{itemize}
+
+Reliability
+\begin{itemize}
+\item open-source project with a big communicate 
+\item very reliabe, a lot of
+	very good programmers are working on it
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Comparision}
+	\begin{itemize}
+		\item both different
+		\item Tor for anonymity
+		\item VPN for privacy
+		\item Tor is slower
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Requirements}
+	\section{Technical}
+	\subsection{Requirements}
+	\begin{itemize}
+		\item GUI
+		\item Configuring openVPN
+		\item stores profiles
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Requirements: Template}
+	Requirement Template for create profile function:
+	\begin{itemize}
+		\item Description: This operation creates a new profile where
+		the user can change the configurations. 
+		\item Parameters: No parameter is required 
+		\item Pre-condition: The user triggers the create button event 
+		\item Post condition: Will draw the configuration window and
+			close the current window.
+		\item Trigger: Create button event
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Design: File structure}
+\subsection{Design}
+\begin{itemize}
+\item main.py
+\item model.py
+\item windows.py
+\item data
+\begin{itemize}
+\item json
+\item config
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Design: data structures}
+	from model.py class profile
+	\begin{itemize}
+	\item name of the profile as plain text
+	\item port stored as whole number
+	\item remote ip as a whole number
+	\item key, a file path as plain text
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Production: Draw first window, main function}
+	\subsection{Production}
+
+\begin{lstlisting}[language=Python]
+if __name__ == '__main__':
+	profiles = Profiles()
+
+	# Create profile window and draw everything
+	profile_win = ProfileWindow()
+	profile_win.draw_window()
+	profile_win.show_profile_list(profiles.get_string_array())
+
+	entry = profile_win.get_text_field()
+	entry.connect("activate", create_new_profile)
+	profile_win.new_profile_button.connect("clicked", create_new_profile, entry)
+	profile_win.list_box.connect("row_activated", open_settings_win)
+
+	profile_win.connect("destroy", Gtk.main_quit)
+	Gtk.main()
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Production: load profiles}
+\begin{lstlisting}[language=Python]
+def load_profiles(self):
+        file = open("data/json/profiles.json")
+        data = json.load(file)
+        file.close()
+        idx = 0
+        for profile in data:
+            new_profile = Profile(profile['name'], idx ,profile["port"]
+                                  ,profile["remote"],profile["protocol"],profile["key"])
+            self.profiles.append(new_profile) 
+            idx += 1
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Production: Possible Improvements}
+	\begin{itemize}
+		\item authentication configurations
+		\item more secure encrytion options like configuring PKI
+		\item new window with status report of the VPN
+		\item new window showing perfomance graphs	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+    \textbf{Thank you for your attention!}\\
+\end{center}
+\end{frame}
+
+\end{document}
