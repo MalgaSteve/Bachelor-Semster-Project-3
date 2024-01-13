@@ -1,0 +1,151 @@
+\documentclass[9pt]{beamer}
+\usepackage{graphicx} \usetheme{CambridgeUS} \usecolortheme{seahorse} \usepackage{mdframed}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title[PAKE und Honeywords]{BSP: PAKE und Täuschungs Kennwörter}
+\author[Steve Meireles]{Student: Steve Meireles \and Tutor: Marjan Skrobot}
+\date{2024}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Inhaltsverzeichnis}
+\tableofcontents
+\end{frame}
+
+\begin{frame}
+\frametitle{Wissenschaftliche Frage}
+\section{Wissenschaftliche Frage}
+Wie erkennt
+man, ob eine Kennwort-Datei im Besitz von Eindringlingen ist und kann man
+	gleichzeitig Phishing-Angriffe verhindern?
+\end{frame}
+
+\begin{frame}
+\frametitle{Honeywords}
+\section{Honeywords}
+\begin{itemize}
+	\item Falsche Passwörter zur Kennwort-Datei hinzufügen
+	\item Honeychecker ist ein seperates und robustes System
+	\item Honeychecker speichert die Postionen der richtegen Kennwörter
+	\item Honeychecker alarmiert System Administrator beim Auslösen eines Honeywords
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile, plain]
+\frametitle{PAKE Protokolle}
+\section{PAKE}
+	\begin{itemize}
+		\item Sicher eine Lang-Zeit-Schlüssel mit einem geteileten
+			schwachen Passwort
+		\item Diese Protokolle ermöglichen das mit Hilfe von zyklischen
+			Gruppen
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{SweetPAKE: Alice und Bob}
+\section{SweetPAKE}
+Lass Alice und Bob zwei Parteien sein
+\begin{enumerate}
+	\item Alice generiert öffentlicher Schlüssel und privater
+	\item Alice schickt öffentlicher Schlüssel zu Bob
+	\item Bob genereriert eine List von Lang-Zeit Schlüsseln
+	\item Verschlüsselt jeden Schlüssel dieser Liste
+	\item Bob schickt die Liste zur Alice
+	\item Alice entschlüsselt jedes Element bis erfolgreich
+	\item Alice schickt dann die Position des korrekten Kennworts zur Bob
+	\item Bob schickt die Position zum Honeychecker
+	\item Honeychecker checkt ob die Kennwort-Datei in Besitz von Eindringle ist
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Technische Arbeit}
+\section{Technische Arbeit}
+	\begin{itemize}
+		\item Implementation von SweetPAKE
+		\item Muss schnell genug sein
+	\end{itemize}
+	Vier Hauptfunktionen:
+	\begin{itemize}
+		\item generate(): Erster Schritt des SweetPAKE-Protokolls
+		\item encryption(): Verschlüsselungsschritt
+		\item decryption(): Entschlüsselungsschritt
+		\item retrieve\_key(): Schlüsselabrufschritt
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Technische Arbeit: Abschnitt}
+\begin{lstlisting}[language=Python]
+def gen(self):
+        #gen function
+        group = self.params.group
+        self.rundom_exponent = group.rundom_exponent(self.entropy_f)
+        self.y1_elem = group.Base1.exp(self.rundom_exponent)
+        self.y2_elem = group.Base2.exp(self.rundom_exponent)
+        Y2_elem = self.y2_elem.elementmult(group.password_to_hash(self.pw))
+
+        #self.outbound_message = (self.y1+self.Y2) <-- apk
+        y1_bytes = self.y1_elem.to_bytes()
+        Y2_bytes = Y2_elem.to_bytes()
+        self.outbound_message =  y1_bytes + Y2_bytes
+
+        username_size = len(self.username).to_bytes()
+
+        outbound_id_und_message = self.side + username_size + self.username + self.outbound_message
+
+        return outbound_id_und_message
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Schlussfolgerung}
+\section{Schlussfolgerung}
+Wie erkennt man, ob eine Kennwort-Datei im Besitz von Eindringlingen ist und
+	kann man gleichzeitig Phishing-Angriffe verhindern?
+\begin{itemize}
+	\item SweetPAKE ist eine gute Antwort
+	\item Kombiminiert Stärken von PAKE und Honeywords
+	\item Mit der Implementierung kann man dies austesten
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{center}
+    \textbf{Thank you for your attention!}\\
+\end{center}
+\end{frame}
+
+
+\end{document}

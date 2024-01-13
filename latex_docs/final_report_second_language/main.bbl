@@ -48,28 +48,6 @@
       \field{pages}{145\bibrangedash 160}
       \range{pages}{16}
     \endentry
-    \entry{marjan2023}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=f5c2dc41ddf08fa635153339a7fc80d0}{%
-           family={Skrobot},
-           familyi={S\bibinitperiod},
-           given={Marjan},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \strng{fullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \strng{bibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \strng{authorbibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \strng{authornamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \strng{authorfullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{SweetPAKE}
-      \field{title}{SweetPAKE: Key exchange with decoy passwords}
-      \field{year}{2023}
-    \endentry
     \entry{bradley2019password}{inproceedings}{}
       \name{author}{6}{}{%
         {{hash=73c8ca367858ee2e5585e57138de945d}{%
@@ -112,8 +90,8 @@
       \strng{authorbibnamehash}{8e2d9d83a02c366dc92443d9a81aa75c}
       \strng{authornamehash}{d0364510a5b971c38fa871737169feb7}
       \strng{authorfullhash}{8e2d9d83a02c366dc92443d9a81aa75c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Applied Cryptography and Network Security: 17th International Conference, ACNS 2019, Bogota, Colombia, June 5--7, 2019, Proceedings 17}
@@ -122,8 +100,29 @@
       \field{pages}{442\bibrangedash 462}
       \range{pages}{21}
     \endentry
+    \entry{marjan2023}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=f5c2dc41ddf08fa635153339a7fc80d0}{%
+           family={Skrobot},
+           familyi={S\bibinitperiod},
+           given={Marjan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{fullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{bibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authorbibnamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authornamehash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \strng{authorfullhash}{f5c2dc41ddf08fa635153339a7fc80d0}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SweetPAKE}
+      \field{title}{SweetPAKE: Key exchange with decoy passwords}
+      \field{year}{2023}
+    \endentry
   \enddatalist
-  \missing{bradley2019passwords}
   \missing{marjan 2023}
 \endrefsection
 \endinput

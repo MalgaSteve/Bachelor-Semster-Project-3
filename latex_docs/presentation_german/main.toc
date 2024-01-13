@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Wissenschaftliche Frage}{3}{0}{1}
+\beamer@sectionintoc {2}{Honeywords}{4}{0}{2}
+\beamer@sectionintoc {3}{PAKE}{5}{0}{3}
+\beamer@sectionintoc {4}{SweetPAKE}{6}{0}{4}
+\beamer@sectionintoc {5}{Technische Arbeit}{7}{0}{5}
+\beamer@sectionintoc {6}{Schlussfolgerung}{9}{0}{6}

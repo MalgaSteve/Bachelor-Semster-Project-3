@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2024.1.8)  12 JAN 2024 14:51
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Arch Linux)  (format=lualatex 2024.1.10)  13 JAN 2024 17:32
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1052,13 +1052,6 @@ Package biblatex Info: ... file 'main.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                bradley2019passwords
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                marjan 2023
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -1137,14 +1130,6 @@ LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
 (Font)              using `TU/ptm/bx/n' instead on input line 96.
-
-
-LaTeX Warning: Citation 'bradley2019passwords' on page 1 undefined on input lin
-e 101.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 101.
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
@@ -1240,11 +1225,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
 Here is how much of LuaTeX's memory you used:
  26584 strings out of 478285
- 596178,1977958 words of node,token memory allocated
+ 596190,1977958 words of node,token memory allocated
  566 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 67 glue_spec,
  7 attribute_list, 2 write nodes
-   avail lists: 1:4,2:7007,3:293,4:9934,5:9671,6:148,7:23661,8:3,9:28359,10:26,1
+   avail lists: 1:4,2:7007,3:293,4:9934,5:9679,6:148,7:23673,8:3,9:28359,10:26,1
 1:1806
  45869 multiletter control sequences out of 65536+600000
  75 fonts using 5295767 bytes
@@ -1256,7 +1241,7 @@ ntype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroma
 n12-regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 
-Output written on main.pdf (3 pages, 56108 bytes).
+Output written on main.pdf (3 pages, 56567 bytes).
 
 PDF statistics: 63 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
